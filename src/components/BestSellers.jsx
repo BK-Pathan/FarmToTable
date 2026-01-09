@@ -1,0 +1,44 @@
+import React from 'react';
+import './bestSellers.css';
+import ProductCard from './ProductCard';
+
+import desiGhee1kg from '../assets/images/desi.png';
+import desiGhee500g from '../assets/images/ghee.png';
+import honey1kg from '../assets/images/honey.png';
+import honey500g from '../assets/images/hone.png';
+
+const products = [
+  { id: 'ghee-1', title: 'Desi Ghee – 1kg', description: 'Pure traditional desi ghee for healthier cooking and taste.', price: 'PKR 3500', image: desiGhee1kg },
+  { id: 'ghee-2', title: 'Desi Ghee – 500g', description: 'Rich desi ghee packed with nutrients and flavor.', price: 'PKR 1750', image: desiGhee500g },
+  { id: 'honey-1', title: 'Pure Honey – 1kg', description: 'Raw natural honey — perfect for spreading and sweetening.', price: 'PKR 1,500', image: honey1kg },
+  { id: 'honey-2', title: 'Pure Honey – 500g', description: 'Delicious natural honey with floral notes.', price: 'PKR 800', image: honey500g },
+];
+
+export default function BestSellers({ addToCart }) {
+  return (
+    <section className="bs-section">
+      <div className="bs-wrap container">
+        <header className="bs-top">
+          <h2>Best Sellers</h2>
+          <p className="bs-subtitle">Our most-loved pantry essentials</p>
+        </header>
+
+        <div className="bs-grid">
+          {products.map((p) => (
+            <ProductCard
+              key={p.id}
+              product={p}
+              onAddToCart={() =>
+                addToCart({
+                  id: p.id,
+                  name: p.title,
+                  price: Number(p.price.replace('PKR ', '').replace(',', '')),
+                })
+              }
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

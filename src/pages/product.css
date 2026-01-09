@@ -1,0 +1,215 @@
+/* =========================
+   PRODUCT PAGE LAYOUT
+   ========================= */
+.product-page {
+  background-color: #ddd;
+  padding: 40px;
+  width: 98.8vw;
+  margin: 65px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Page Title */
+.product-titlle {
+  /* margin-top: 90px; */
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Layout with Sidebar */
+.product-layout {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+/* =========================
+   PRODUCT GRID
+   ========================= */
+.product-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Product Card */
+.product {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  height: 380px !important;
+  transition: transform 0.2s;
+}
+
+.product:hover {
+  transform: scale(1.05);
+}
+
+.product img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product h2 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  /* margin-top: 20px !important; */
+}
+
+.price {
+  color: #e67e22;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.stars {
+  color: #f1c40f;
+  font-size: 1rem;
+}
+
+/* =========================
+   RESPONSIVE GRID
+   ========================= */
+@media (max-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-layout {
+    flex-direction: column;
+  }
+  .product h2{
+    margin-top: 10px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+   .product h2{
+    margin-top: 10px !important;
+  }
+}
+/* =========================
+   FEEDBACK SECTION
+   ========================= */
+.feedback-section {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 15px;
+  margin: 20px auto;
+  background: transparent;
+  font-family: Arial, sans-serif;
+  text-align: left;
+}
+
+/* Inputs */
+.feedback-section input,
+.feedback-section textarea {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 15px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 14px;
+  color: black;
+  background: transparent;
+  outline: none;
+}
+
+.feedback-section textarea {
+  resize: none;
+}
+
+.feedback-section input:focus,
+.feedback-section textarea:focus {
+  border-bottom-color: #e67e22;
+}
+
+/* Button */
+.feedback-section button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #e67e22;
+  color:black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.feedback-section button:hover {
+  background: #cf711d;
+}
+
+/* =========================
+   STAR RATING
+   ========================= */
+.star-rating {
+  display: flex;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.star {
+  font-size: 28px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star.filled {
+  color: #f1c40f;
+}
+
+/* =========================
+   FEEDBACK LIST
+   ========================= */
+.all-feedbacks {
+  margin-top: 30px;
+}
+
+.feedback-item {
+  padding: 12px 0;
+  border-top: 1px solid #eaeaea;
+}
+
+.feedback-rating {
+  color: #f1c40f;
+  font-size: 18px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 12px 20px;
+  background: #134e18;
+  color: #fff;
+
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: green;
+}

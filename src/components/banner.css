@@ -1,0 +1,83 @@
+/* Reset */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* Banner container */
+.banner-container {
+  width: 98.8vw;                /* full width */
+  height: 90vh;           /* desktop default */
+  max-height: 700px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Banner image */
+.banner-container img.banner-image {
+  width: 100%;            /* full width of container */
+  height: 100%;
+  object-fit: cover;      /* cover container, maintain aspect ratio */
+  display: block;
+}
+
+/* Dots */
+.banner-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff77;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #fff;
+}
+
+
+
+/* Laptop screens */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .banner-container {
+    width: 100vw;        
+    height: 90vh;       /* proportional height */
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .banner-container img.banner-image {
+     width: 150vw;    /* full width */
+    height: 90vh;
+    object-fit: cover;  /* maintain aspect ratio */
+    display: block;
+  }
+}
+
+/* Tablet screens */
+@media screen and (max-width: 768px) {
+  .banner-container {
+    width: 100%;   
+    height: 70vh;
+  }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 480px) {
+  .banner-container {
+    width: 100%;  
+    height: 50vh;
+  }
+}

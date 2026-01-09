@@ -1,0 +1,128 @@
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 999;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-panel {
+  width: 350px;
+  height: 100%;
+  background: #fff;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-body {
+    flex: 1; /* takes remaining space */
+  overflow-y: auto; /* scroll if items overflow */
+  margin-bottom: 20px;
+
+  /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+  padding-top: 30px;
+}
+.cart-body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-controls button {
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.delete-btn {
+  margin-left: auto;
+  color: red;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.price-summary {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  margin-top: 10px;
+  color: black;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.price-row.total {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.cart-footer {
+  flex-shrink: 0; /* don't shrink */
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background: green;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.empty-text {
+  text-align: center;
+  color: #777;
+  margin-top: 50px;
+}

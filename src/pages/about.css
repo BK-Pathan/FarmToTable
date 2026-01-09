@@ -1,0 +1,179 @@
+.about-page { 
+  overflow-x: hidden; 
+  font-family: Arial, sans-serif;
+  background: white;
+  color: black !important;
+  margin-top: 20px;
+}
+
+/* Hero Section */
+.about-hero {
+ background-image: url('https://images.unsplash.com/photo-1501155077240-4ac4fa7b5f73?auto=format&fit=crop&w=1800&q=60');
+  background-size: cover;
+  background-position: center;
+ padding-top: 90px;
+  text-align: center;
+  width: 98.8vw;
+  position: relative;
+}
+.about-hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  /* color: #fff; */
+}
+.hero-overlay {
+  background: none;
+  backdrop-filter: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.hero-overlay h1 {
+  margin-bottom: 20px; /* heading and statement separation */
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.hero-overlay p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Vision & Mission Section */
+.about-vision-mission {
+  background: #f6fffa;
+  padding-top: 60px;
+  width: 100%;
+}
+.vision-mission-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.vision-text {
+  flex: 1;
+  min-width: 300px;
+}
+.vision-text h3 { 
+  margin-bottom: 15px; 
+  font-weight: 700; 
+  color: #111; 
+}
+.vision-text p { 
+  margin-bottom: 25px; 
+  line-height: 1.6; 
+  color: #333; 
+  text-align: justify;
+}
+
+/* Vision image */
+.vision-image { 
+  flex: 1; 
+  min-width: 300px; 
+}
+.vision-image img { 
+  width: 80%; 
+  height: 60vh; 
+  border-radius: 10px; 
+  object-fit: cover; 
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+
+/* Centered Story Section */
+.about-story-center {
+ padding-top: 30px;
+  text-align: justify;
+  width: 100%;
+}
+.story-center-container {
+  max-width: 800px;
+  margin: 20px auto 0 auto; /* margin-top for spacing from previous section */
+}
+.story-center-container h2 { 
+  margin-bottom: 15px; 
+  font-size: 2rem;
+  text-align: center;
+}
+.story-center-container p { 
+  line-height: 1.6; 
+  color: #333; 
+  margin-bottom: 20px; 
+}
+
+/* Inner grids/containers */
+.about-page .container,
+.about-page .vm-grid,
+.about-page .story-wrap,
+.about-page .vals-grid,
+.about-page .team-grid,
+.about-page .cta-inner {
+  width: 100% !important;
+  max-width: 1200px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Hero Section - keep text but hide image on smaller screens */
+@media (max-width: 1000px) {
+  .vision-mission-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .vision-image {
+    display: none; /* hide image on smaller screens */
+    margin-top: 0;
+  }
+
+  /* About Hero text padding */
+  .about-hero .hero-overlay {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Vision text padding */
+  .vision-text {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Optional: Vision container margin-bottom to separate from other sections */
+  .about-vision-mission {
+    margin-bottom: 40px;
+  }
+}
+
+/* Story section adjustments for smaller screens */
+@media (max-width: 1000px) {
+  .story-center-container {
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+/* Ensure cards/content stay inside screen */
+.about-page .container,
+.about-page .vm-grid,
+.about-page .story-wrap,
+.about-page .vals-grid,
+.about-page .team-grid,
+.about-page .cta-inner {
+  max-width: 1200px; /* limit max width */
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Hero overlay text smaller on small screens */
+@media (max-width: 480px) {
+  .hero-overlay h1 {
+    font-size: 1.6rem;
+  }
+}

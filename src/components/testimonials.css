@@ -1,0 +1,69 @@
+/* Testimonials styles */
+.testimonials { 
+  padding: 40px 14px; 
+  background: #fbfbfb; 
+}
+
+.test-header { 
+  text-align: center; 
+  margin-bottom: 20px; 
+}
+
+.test-sub { 
+  color: #6b7280; 
+  margin-top: 6px; 
+}
+
+/* Grid layout */
+.test-grid { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row on large screens */
+  gap: 16px; 
+  margin-top: 16px; 
+}
+
+.test-card { 
+  background: #fff; 
+  border-radius: 10px; 
+  padding: 14px; 
+  box-shadow: 0 2px 8px rgba(16,24,40,0.04); 
+  border: 1px solid rgba(0,0,0,0.04); 
+}
+
+.test-top { 
+  display:flex; 
+  gap: 12px; 
+  align-items: center; 
+}
+
+.test-photo { 
+  width:54px; 
+  height:54px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+}
+
+.test-name { 
+  font-weight:700; 
+  color:#111827; 
+}
+
+.star-row { 
+  display:flex; 
+  align-items:center; 
+}
+
+.test-feedback { 
+  margin-top: 10px; 
+  color: #4b5563; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) { 
+  .test-grid { grid-template-columns: repeat(2, 1fr); } /* 2 cards per row for tablets & small screens */
+}
+
+@media (max-width: 480px) { 
+  .test-grid { grid-template-columns: repeat(2, 1fr); } /* 2 cards per row for mobile */
+  .testimonials { padding: 28px 12px; }
+}

@@ -1,0 +1,37 @@
+.product-page {
+  display: flex;
+  gap: 40px;
+  padding-top: 80px;
+   /* width: 86.3vw;        */
+   height: auto;
+   min-height: 60vh;
+}
+
+.product-page img {
+  width: 380px;
+  border-radius: 12px;
+}
+
+.product-info h1 {
+  font-size: 32px;
+}
+
+.price {
+  font-size: 22px;
+  color: #4a8c46;
+  font-weight: bold;
+}
+
+.in-stock {
+  color: green;
+  font-weight: bold;
+}
+
+.out-stock {
+  color: red;
+  font-weight: bold;
+}
+
+.feedback {
+  margin: 15px 0;
+}

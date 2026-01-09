@@ -1,0 +1,72 @@
+/* =========================
+   CATEGORY SIDEBAR (DESKTOP)
+   ========================= */
+.category-sidebar {
+  width: 230px;
+  background: #f7f7f7;
+  padding: 15px;
+  border-radius: 8px;
+ height: fit-content;
+}
+
+.category-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.category-sidebar li {
+  margin-bottom: 10px;
+}
+
+.category-sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* =========================
+   MOBILE CATEGORY FILTER
+   ========================= */
+.mobile-category {
+  background: #f7f7f7;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.mobile-category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mobile-category-list {
+  list-style: none;
+  padding: 10px 0 0;
+}
+
+.mobile-category-list li {
+  margin-bottom: 10px;
+}
+
+/* =========================
+   VISIBILITY CONTROL
+   ========================= */
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}

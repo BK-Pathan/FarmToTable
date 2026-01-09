@@ -1,0 +1,11 @@
+/* Our Story section styles */
+.our-story { padding: 36px 14px; background: #fff; width: 98.8vw; margin-left: calc((100% - 98.8vw)/2); margin-right: calc((100% - 98.8vw)/2); box-sizing: border-box; }
+.story-wrap { display: flex; gap: 20px; align-items: center; max-width: 1180px; margin: 0 auto; padding-left: 0; padding-right: 0; box-sizing: border-box; }
+.story-content { flex: 1; max-width: 640px; margin: 0 auto; padding-left: 0; padding-right: 0; }
+.story-content h2 { margin-top: 0; font-size: 1.6rem; color: #064e3b; }
+.story-content p { color: #374151; line-height: 1.6; margin-top: 12px; }
+.story-optional { flex: 1; }
+.story-optional img { width: 100%; border-radius: 10px; border: 1px solid rgba(0,0,0,0.04); height: 320px; object-fit: cover; }
+
+@media (max-width: 1000px){ .story-wrap { flex-direction: column; } .story-optional img{ height: 260px; }}
+@media (max-width: 480px){ .story-content h2 { font-size: 1.35rem; }}

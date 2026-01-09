@@ -1,0 +1,14 @@
+/* Newsletter CTA styles similar to the reference site */
+.newsletter-cta { padding: 38px 14px; background: linear-gradient(180deg,#f6fffb, #ffffff); }
+.cta-inner { display:flex; gap:22px; align-items:center; justify-content: space-between; max-width: 1180px; margin: 0 auto; padding: 20px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.04); box-shadow: 0 1px 12px rgba(16,24,40,0.03); }
+.cta-text h2 { margin:0; font-size: 1.45rem; color: #064e3b; }
+.cta-text p { margin: 4px 0 0; color: #374151; }
+
+.cta-form { display:flex; gap: 10px; }
+.cta-form input { padding: 12px 14px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.06); min-width: 260px; }
+.cta-form input:focus { outline: none; box-shadow: 0 0 0 4px rgba(16,185,129,0.06); border-color: #10b981; }
+.btn-cta { background: #10b981; color: #fff; border: none; padding: 12px 18px; border-radius: 8px; cursor: pointer; font-weight: 700; }
+.btn-cta:hover { background: #059669; }
+.cta-status { text-align:center; margin-top: 10px; color: #065f46; font-weight: 600; }
+
+@media (max-width: 900px){ .cta-inner { flex-direction: column; align-items: flex-start; gap: 12px; } .cta-form { width: 100%; } .cta-form input { width: 100%; } }

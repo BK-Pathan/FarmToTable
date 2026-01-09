@@ -1,0 +1,76 @@
+/* src/styles/pages.css */
+
+/* Common wrapper for all pages */
+.page-content {
+  width: 98.8vw !important;       /* Content width */
+  margin: 40px auto;      /* Center the content */
+  padding: 20px;          /* Inner spacing */
+  background-color: #fff; /* White background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  border-radius: 8px;     /* Rounded corners */
+  line-height: 1.7;       /* Spacing between lines */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;            /* Dark text for readability */
+}
+
+/* Main heading */
+.page-content h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+/* Section headings */
+.page-content h2 {
+  font-size: 1.3rem;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+/* Paragraphs */
+.page-content p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Lists */
+.page-content ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.page-content ul li {
+  margin-bottom: 8px;
+}
+
+/* Links inside content */
+.page-content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.page-content a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-content {
+    padding: 15px;
+    margin: 20px;
+  }
+
+  .page-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .page-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .page-content p, .page-content ul li {
+    font-size: 0.95rem;
+  }
+}

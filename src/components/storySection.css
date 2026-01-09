@@ -1,0 +1,11 @@
+/* Our Story section */
+.story-section { padding: 40px 14px; background: #fbfbfb; }
+.story-grid { display:flex; gap: 24px; align-items: center; max-width: 1180px; margin: 0 auto; }
+.story-text { flex:1; }
+.story-text h2 { margin-top: 0; font-size: 1.6rem; color:#064e3b; }
+.story-text p { color: #374151; line-height: 1.6; }
+.story-img { flex: 1; }
+.story-img img { width: 100%; border-radius: 12px; height: 360px; object-fit: cover; border: 1px solid rgba(0,0,0,0.04); }
+
+@media (max-width: 1000px){ .story-grid{ flex-direction: column; } .story-img img{ height: 300px; }}
+@media (max-width: 480px){ .story-text h2{ font-size: 1.3rem; }}
