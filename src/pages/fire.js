@@ -1,6 +1,7 @@
 // 🔹 Imports (always on top)
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+
 // ❌ analytics zaroori nahi abhi, isliye hata diya
 
 // 🔹 Firebase config
