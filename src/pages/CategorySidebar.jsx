@@ -9,7 +9,7 @@ const categories = [
   { id: 3, name: "Seeds", path: "/product/seeds" },
   { id: 4, name: "Oils", path: "/product/oils" },
   { id: 5, name: "Achar", path: "/product/achar" },
-  { id: 6, name: "Tea", path: "/product/tea" },
+  { id: 6, name: "Tea", path: "/product/tea", disabled: true },
   { id: 7, name: "Dates", path: "/product/dates" },
   { id: 8, name: "Gur / Jaggery", path: "/product/gurjaggery" },
   { id: 9, name: "Flour", path: "/product/flour" },
@@ -27,45 +27,83 @@ export default function CategorySidebar() {
     navigate(path);
   };
 
-  return (
-    <>
-      {/* DESKTOP SIDEBAR */}
-      <div className="category-sidebar desktop-only">
-        <h3>Categories</h3>
-        <ul>
-          {categories.map(cat => (
-            <li key={cat.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+ return (
+  <>
+    {/* DESKTOP SIDEBAR */}
+    <div className="category-sidebar desktop-only">
+      <h3>Categories</h3>
+      <ul>
+        {categories.map(cat => (
+          <li
+            key={cat.id}
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              opacity: cat.disabled ? 0.6 : 1
+            }}
+          >
+            {cat.disabled ? (
+              <span className="disabled-category">
+                {cat.name}
+                <small className="coming-soon"> (Coming Soon)</small>
+              </span>
+            ) : (
               <Link to={cat.path}>{cat.name}</Link>
+            )}
+
+            {!cat.disabled && (
               <input
                 type="checkbox"
                 checked={selectedCategory === cat.id}
                 onChange={() => handleCheckbox(cat.id, cat.path)}
               />
-            </li>
-          ))}
-        </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* MOBILE DROPDOWN */}
+    <div className="mobile-category mobile-only">
+      <div
+        className="mobile-category-header"
+        onClick={() => setOpen(!open)}
+      >
+        <h3>Filters</h3>
+        <span>{open ? "▲" : "▼"}</span>
       </div>
 
-      {/* MOBILE DROPDOWN */}
-      <div className="mobile-category mobile-only">
-        <div className="mobile-category-header" onClick={() => setOpen(!open)}>
-          <h3>Filters</h3>
-          <span>{open ? "▲" : "▼"}</span>
-        </div>
-
-        {open && (
-          <ul className="mobile-category-list">
-            {categories.map(cat => (
-              <li key={cat.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      {open && (
+        <ul className="mobile-category-list">
+          {categories.map(cat => (
+            <li
+              key={cat.id}
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                opacity: cat.disabled ? 0.6 : 1
+              }}
+            >
+              {cat.disabled ? (
+                <span className="disabled-category">
+                  {cat.name}
+                  <small className="coming-soon"> (Coming Soon)</small>
+                </span>
+              ) : (
                 <Link
                   to={cat.path}
                   onClick={() => {
-                    setOpen(false);
                     handleCheckbox(cat.id, cat.path);
+                    setOpen(false);
                   }}
                 >
                   {cat.name}
                 </Link>
+              )}
+
+              {!cat.disabled && (
                 <input
                   type="checkbox"
                   checked={selectedCategory === cat.id}
@@ -74,11 +112,12 @@ export default function CategorySidebar() {
                     setOpen(false);
                   }}
                 />
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    </>
-  );
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </>
+);
 }

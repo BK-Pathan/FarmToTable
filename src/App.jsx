@@ -10,6 +10,7 @@ import CheckoutPage from "./pages/CheckoutPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import FAQs from "./pages/FAQs";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import ScrollToTop from "../src/components/ScrollTop"; // ✅ ADD THIS
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -79,6 +80,9 @@ function App() {
 
   return (
     <Router>
+    
+      <ScrollToTop /> {/* ✅ MAGIC FIX */}
+
       <Navbar toggleCart={toggleCart} cartCount={cartCount} />
 
       <CartPanel

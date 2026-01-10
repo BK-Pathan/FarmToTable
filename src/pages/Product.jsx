@@ -106,6 +106,11 @@ export default function Product({ addToCart }) {
               <div className="product" key={item.id}>
                 <img src={item.image} alt={item.name} />
                 <h2>{item.name}</h2>
+                {item.qty && (
+    <p className="product-qty">
+      Quantity: <strong>{item.qty}</strong>
+    </p>
+  )}
                 <p className="price">PKR {item.price}</p>
                 <p className="description">{item.description}</p>
                 <div className="stars">

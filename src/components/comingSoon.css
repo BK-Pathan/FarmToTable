@@ -1,0 +1,50 @@
+
+.coming-soon-section {
+  width: 100%;
+  min-height: 400px;               /* adjust as needed */
+  padding: 80px 20px;
+
+  background-image: url("../assets/images/tes.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;          /* 🔥 this fixes width */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.coming-soon-content h2 {
+  font-size: 36px;
+  color:rgb(46, 58, 27);
+  margin-bottom: 12px;
+}
+
+.coming-soon-content p {
+  font-size: 16px;
+  color: rgb(46, 58, 27);
+
+  max-width: 600px;
+  margin: 0 auto 25px;
+  padding: 12px 18px;
+  font-weight: bolder;
+  background: rgba(255, 255, 255, 0.15); /* light shade */
+  border-radius: 10px;
+  backdrop-filter: blur(3px); /* modern glass effect */
+}
+.coming-soon-btn {
+  padding: 12px 28px;
+  background-color: #2f5d3a;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.coming-soon-btn:hover {
+  background-color: #24492e;
+}

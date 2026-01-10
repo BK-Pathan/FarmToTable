@@ -49,7 +49,7 @@
   max-width: 300px;
   display: flex;
   flex-direction: column;
-  height: 380px !important;
+  height: 480px !important;
   transition: transform 0.2s;
 }
 
@@ -212,4 +212,9 @@ button {
 
 button:hover {
   background: green;
+}
+.product-qty {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0 6px;
 }

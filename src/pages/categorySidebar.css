@@ -70,3 +70,14 @@
     display: block;
   }
 }
+
+.disabled-category {
+  color: #777;
+  cursor: not-allowed;
+}
+
+.coming-soon {
+  color: #d9534f;
+  font-size: 12px;
+  margin-left: 4px;
+}
