@@ -5,7 +5,7 @@ import CategorySidebar from "../pages/CategorySidebar.jsx";
 import { products } from "../pages/products.js";
 
 import { db } from "../pages/fire.js";
-import { collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "firebase/firestore";
+import { collection, addDoc, query, orderBy, serverTimestamp, onSnapshot } from "firebase/firestore";
 
 export default function Product({ addToCart }) {
   const { category } = useParams();
@@ -19,19 +19,15 @@ export default function Product({ addToCart }) {
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState(""); // success | error
 
-  // FETCH FEEDBACKS
-  const fetchFeedbacks = async () => {
-    try {
-      const q = query(collection(db, "feedbacks"), orderBy("timestamp", "desc"));
-      const snapshot = await getDocs(q);
-      setFeedbacks(snapshot.docs.map(d => ({ id: d.id, ...d.data() })));
-    } catch (err) {
-      console.error("Fetch error:", err);
-    }
-  };
-
+  // 🔹 REAL-TIME FEEDBACKS
   useEffect(() => {
-    fetchFeedbacks();
+    const q = query(collection(db, "feedbacks"), orderBy("timestamp", "desc"));
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      setFeedbacks(snapshot.docs.map(d => ({ id: d.id, ...d.data() })));
+    });
+
+    // Cleanup listener
+    return () => unsubscribe();
   }, []);
 
   const handleSubmit = async () => {
@@ -43,6 +39,7 @@ export default function Product({ addToCart }) {
 
     setLoading(true);
     setMessage("");
+
     try {
       await addDoc(collection(db, "feedbacks"), {
         name: name.trim(),
@@ -52,6 +49,7 @@ export default function Product({ addToCart }) {
         timestamp: serverTimestamp()
       });
 
+      // Clear form
       setName("");
       setEmail("");
       setFeedbackText("");
@@ -59,8 +57,6 @@ export default function Product({ addToCart }) {
 
       setMessage("Feedback submitted successfully ✅");
       setMessageType("success");
-
-      fetchFeedbacks();
     } catch (err) {
       console.error("Submit error:", err);
       setMessage("Something went wrong. Please try again ❌");
@@ -74,24 +70,21 @@ export default function Product({ addToCart }) {
     }
   };
 
-  // 🔹 CATEGORY FILTER: normalize for spaces, &, and case
+  // 🔹 CATEGORY FILTER
   const normalize = str =>
     str
       ?.toLowerCase()
-      .replace(/\s+/g, " ") // multiple spaces
-      .replace(/&/g, "and") // replace & with 'and'
+      .replace(/\s+/g, " ")
+      .replace(/&/g, "and")
       .trim();
 
- const filteredProducts = category
-  ? products.filter(p => p.slug === category)
-  : products;
+  const filteredProducts = category
+    ? products.filter(p => p.slug === category)
+    : products;
 
-  // FORMATTED CATEGORY TITLE
- const formattedCategory = category
-  ? category
-      .replace(/-/g, " ")
-      .replace(/\b\w/g, l => l.toUpperCase())
-  : "Our Products";
+  const formattedCategory = category
+    ? category.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())
+    : "Our Products";
 
   return (
     <div className="product-page">
@@ -107,10 +100,10 @@ export default function Product({ addToCart }) {
                 <img src={item.image} alt={item.name} />
                 <h2>{item.name}</h2>
                 {item.qty && (
-    <p className="product-qty">
-      Quantity: <strong>{item.qty}</strong>
-    </p>
-  )}
+                  <p className="product-qty">
+                    Quantity: <strong>{item.qty}</strong>
+                  </p>
+                )}
                 <p className="price">PKR {item.price}</p>
                 <p className="description">{item.description}</p>
                 <div className="stars">
@@ -164,19 +157,23 @@ export default function Product({ addToCart }) {
         </button>
 
         <div className="all-feedbacks">
-          {feedbacks.map(fb => (
-            <div key={fb.id} className="feedback-item">
-              <p>
-                <strong>{fb.name}</strong>
-                {fb.email && ` (${fb.email})`}
-              </p>
-              <div>
-                {"★".repeat(fb.rating)}
-                {"☆".repeat(5 - fb.rating)}
+          {feedbacks.length === 0 ? (
+            <p>No feedbacks yet.</p>
+          ) : (
+            feedbacks.map(fb => (
+              <div key={fb.id} className="feedback-item">
+                <p>
+                  <strong>{fb.name}</strong>
+                  {fb.email && ` (${fb.email})`}
+                </p>
+                <div>
+                  {"★".repeat(fb.rating)}
+                  {"☆".repeat(5 - fb.rating)}
+                </div>
+                <p>{fb.feedback}</p>
               </div>
-              <p>{fb.feedback}</p>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
     </div>

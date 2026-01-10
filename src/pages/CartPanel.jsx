@@ -19,7 +19,7 @@ export default function CartPanel({
     0
   );
 
-  const deliveryChargesDefault = 200; // default DC in cart panel
+  const deliveryChargesDefault = 350; // default DC in cart panel
   const total = subtotal + deliveryChargesDefault;
 
   return (
