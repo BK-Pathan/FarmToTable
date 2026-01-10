@@ -510,7 +510,8 @@ Healthier sugar option.`,
     qty: "1KG",
     description: `Fresh roasted peanuts.
 High in protein and fiber.
-Healthy snack option.`,
+Healthy snack option.
+Boosts energy levels.`,
     stars: 4,
     link: "/peanuts",
     image: "https://i.pinimg.com/1200x/29/1b/3e/291b3e21da800eba78eb4430ba108536.jpg",
