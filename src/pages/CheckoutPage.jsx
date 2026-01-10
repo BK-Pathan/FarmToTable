@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import "./checkoutPage.css";
+import "./CheckoutPage.css";
 import Footer from "../components/Footer";
 
 export default function CheckoutPage() {
