@@ -4,7 +4,7 @@ import "./product.css";
 import CategorySidebar from "../pages/CategorySidebar.jsx";
 import { products } from "../pages/products.js";
 
-import { db } from "../pages/fire";
+import { db } from "../pages/fire.js";
 import { collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "firebase/firestore";
 
 export default function Product({ addToCart }) {
