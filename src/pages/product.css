@@ -49,7 +49,7 @@
   max-width: 300px;
   display: flex;
   flex-direction: column;
-  height: 480px !important;
+  height: 450px !important;
   transition: transform 0.2s;
 }
 

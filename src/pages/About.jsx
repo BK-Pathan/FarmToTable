@@ -39,7 +39,7 @@ export default function About() {
         <div className="story-center-container">
           <h2>Our Story</h2>
           <p>
-            Founded by <strong>Muhammad Saad Khan Youfzai</strong>, FarmToTable started with a simple goal: to bring pure, natural, and hygienic farm products straight to your home. With a passion for wholesome foods, Saad envisioned a brand that values health, freshness, and trust.
+            Founded by <strong>Muhammad Saad Khan Yousfzai</strong>, FarmToTable started with a simple goal: to bring pure, natural, and hygienic farm products straight to your home. With a passion for wholesome foods, Saad envisioned a brand that values health, freshness, and trust.
           </p>
           <p>
             From Ghee and Honey to Seeds, Oils, Pickles, Tea, Dates, Gur, and Flour, every product is carefully packed to maintain hygiene and quality. Our team ensures that deliveries are handled thoughtfully and safely, so you receive your products in perfect condition.
