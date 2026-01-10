@@ -6,6 +6,7 @@
   width: 50%;         /* laptop screen pe card width */
   margin: 0 auto;     /* horizontally center kare */
   box-sizing: border-box;
+  border-radius: 12px;
 }
 
 .checkout-container {
@@ -46,22 +47,44 @@
   font-size: 14px;
 }
 
+/* =======================
+   Professional Input/Textarea Styling
+======================= */
 .checkout-page input[type="text"],
 .checkout-page input[type="email"],
 .checkout-page textarea {
   width: 100%;
-  padding: 8px 0;
-  margin-top: 5px;
-  border: none;
-  border-bottom: 1px solid #ccc;
+  padding: 12px 15px;            /* comfortable padding */
+  margin-top: 6px;
+  border: 1px solid #d1d5db;     /* light gray border */
+  border-radius: 8px;             /* smooth rounded corners */
   font-size: 14px;
   outline: none;
-  background: transparent;
-  color: black !important;
+  background: #fafafa;            /* subtle off-white */
+  color: #111;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.checkout-page input[type="text"]:hover,
+.checkout-page input[type="email"]:hover,
+.checkout-page textarea:hover {
+  border-color: #9ca3af;          /* slightly darker on hover */
+}
+
+/* Focus effect (professional) */
+.checkout-page input[type="text"]:focus,
+.checkout-page input[type="email"]:focus,
+.checkout-page textarea:focus {
+  border-color: #25d366;          /* brand green highlight */
+  background: #fff;
+  box-shadow: 0 0 5px rgba(37, 214, 102, 0.3); /* subtle inner glow */
 }
 
 .checkout-page textarea {
-  min-height: 60px;
+  min-height: 80px;
+  resize: vertical;
 }
 
 .confirm-btn {
@@ -75,9 +98,21 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
 }
 
+.confirm-btn:hover {
+  background-color: #1ebe57;
+  transform: translateY(-2px);
+}
 
+.confirm-btn:active {
+  transform: translateY(0);
+}
+
+/* =======================
+   Responsive Design
+======================= */
 @media (max-width: 1024px) {
   .checkout-container {
     width: 100%; /* laptop / small laptop */
@@ -88,35 +123,28 @@
   .checkout-container {
     width: 100%; /* tablet / mobile */
     margin-top: 30px;
-
   }
-.checkout-page{
-  width: 90%; /* tablet / mobile */
-  padding-top: 70px !important;
-}
+  .checkout-page{
+    width: 90%; /* tablet / mobile */
+    padding-top: 70px !important;
+  }
   .checkout-page h2 {
     font-size: 20px;
-  
   }
-
   .checkout-page label {
     font-size: 13px;
   }
-
   .checkout-page input[type="text"],
   .checkout-page input[type="email"],
   .checkout-page textarea {
     font-size: 13px;
   }
-
   .price-row {
     font-size: 13px;
   }
-
   .price-row.total {
     font-size: 15px;
   }
-
   .confirm-btn {
     font-size: 13px;
     padding: 10px;
@@ -128,7 +156,6 @@
     margin: 10px; /* chhoti screens ke liye */
     padding: 10px;
   }
-
   .checkout-container {
     width: 100%;
     margin-top: 10px;
