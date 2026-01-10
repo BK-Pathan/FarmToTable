@@ -26,10 +26,10 @@ export default function Product({ addToCart }) {
       setFeedbacks(snapshot.docs.map(d => ({ id: d.id, ...d.data() })));
     });
 
-    // Cleanup listener
-    return () => unsubscribe();
+    return () => unsubscribe(); // Cleanup on unmount
   }, []);
 
+  // 🔹 FEEDBACK SUBMIT
   const handleSubmit = async () => {
     if (!name.trim() || !email.trim() || !feedbackText.trim()) {
       setMessage("Please fill all fields.");
@@ -49,7 +49,7 @@ export default function Product({ addToCart }) {
         timestamp: serverTimestamp()
       });
 
-      // Clear form
+      // Clear form after submit
       setName("");
       setEmail("");
       setFeedbackText("");
@@ -72,11 +72,7 @@ export default function Product({ addToCart }) {
 
   // 🔹 CATEGORY FILTER
   const normalize = str =>
-    str
-      ?.toLowerCase()
-      .replace(/\s+/g, " ")
-      .replace(/&/g, "and")
-      .trim();
+    str?.toLowerCase().replace(/\s+/g, " ").replace(/&/g, "and").trim();
 
   const filteredProducts = category
     ? products.filter(p => p.slug === category)
@@ -99,11 +95,7 @@ export default function Product({ addToCart }) {
               <div className="product" key={item.id}>
                 <img src={item.image} alt={item.name} />
                 <h2>{item.name}</h2>
-                {item.qty && (
-                  <p className="product-qty">
-                    Quantity: <strong>{item.qty}</strong>
-                  </p>
-                )}
+                {item.qty && <p className="product-qty">Quantity: <strong>{item.qty}</strong></p>}
                 <p className="price">PKR {item.price}</p>
                 <p className="description">{item.description}</p>
                 <div className="stars">
@@ -112,12 +104,7 @@ export default function Product({ addToCart }) {
                 </div>
                 <button
                   onClick={() =>
-                    addToCart({
-                      id: item.id,
-                      name: item.name,
-                      price: item.price,
-                      quantity: 1
-                    })
+                    addToCart({ id: item.id, name: item.name, price: item.price, quantity: 1 })
                   }
                 >
                   Add to Cart
@@ -162,10 +149,7 @@ export default function Product({ addToCart }) {
           ) : (
             feedbacks.map(fb => (
               <div key={fb.id} className="feedback-item">
-                <p>
-                  <strong>{fb.name}</strong>
-                  {fb.email && ` (${fb.email})`}
-                </p>
+                <p><strong>{fb.name}</strong>{fb.email && ` (${fb.email})`}</p>
                 <div>
                   {"★".repeat(fb.rating)}
                   {"☆".repeat(5 - fb.rating)}
