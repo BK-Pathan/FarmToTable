@@ -1,5 +1,5 @@
 import React from "react";
-import "../pages/Page.css";
+import "../pages/page.css";
 
 export default function PrivacyPolicy() {
   return (
