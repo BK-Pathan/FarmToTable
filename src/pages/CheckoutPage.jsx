@@ -12,7 +12,8 @@ export default function CheckoutPage() {
     email: "",
     phone: "",
     city: "",
-    address: ""
+    address: "",
+    note: ""
   });
 
   const subtotal = cartItems.reduce((total, i) => total + i.price * i.quantity, 0);
@@ -66,6 +67,10 @@ export default function CheckoutPage() {
 
           <label>Address:
             <textarea name="address" value={form.address} onChange={handleChange} />
+          </label>
+
+           <label>Order Note (Optional):
+            <textarea name="note" value={form.note} onChange={handleChange} placeholder="Type any instructions or notes for the seller..." />
           </label>
 
           {/* Display Cart Items */}

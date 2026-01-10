@@ -9,7 +9,7 @@ export const products = [
     qty: "1KG",
     description: `Made from pure buffalo milk.
 Prepared using traditional methods.
-Free from chemicals and preservatives & Rich taste .`,
+Free from chemicals .`,
     stars: 5,
     link: "/desi-ghee-buffalo",
     image: "https://i.pinimg.com/736x/de/5c/e1/de5ce131b62e328fef48db877686bc98.jpg",
@@ -20,11 +20,11 @@ Free from chemicals and preservatives & Rich taste .`,
   {
     id: 2,
     name: "Desi Ghee Pure Cow ",
-    price: 3200,
+    price: 3500,
     qty: "1KG",
     description: `Prepared from fresh cow milk.
 Light aroma and smooth texture.
-Supports digestion and immunity.
+Supports digestion .
 Ideal for daily cooking use.`,
     stars: 5,
     link: "/desi-ghee-cow",
@@ -36,12 +36,12 @@ Ideal for daily cooking use.`,
   {
     id: 3,
     name: "Pure Buffalo Butter ",
-    price: 6500,
+    price: 6000,
     qty: "1KG",
     description: `Freshly churned buffalo butter.
 No artificial colors or flavors.
 Rich creamy consistency.
-Perfect for breakfast and baking.`,
+Perfect for breakfast.`,
     stars: 4,
     link: "/buffalo-butter",
     image: "https://i.pinimg.com/1200x/83/ae/bb/83aebb00eb0eb1f235dea31bae10c4f6.jpg",
@@ -68,12 +68,11 @@ Suitable for all age groups.`,
   {
     id: 5,
     name: "Peanut Butter ",
-    price: 1500,
-    qty: "1KG",
+    price: 1200,
+    qty: "500g",
     description: `High protein peanut butter.
 Smooth and creamy texture.
-No added preservatives.
-Great for fitness and energy.`,
+No added preservatives.`,
     stars: 5,
     link: "/peanut-butter",
     image: "https://i.pinimg.com/736x/43/f9/0e/43f90e62c2dbfb04a557fb09b4a63e30.jpg",
@@ -89,8 +88,7 @@ Great for fitness and energy.`,
     qty: "1KG",
     description: `100% pure natural honey.
 Collected from natural sources.
-Boosts immunity and energy.
-Ideal for daily consumption.`,
+Boosts immunity and energy.`,
     stars: 5,
     link: "/honey-1500",
     image: "https://i.pinimg.com/736x/d5/d2/26/d5d226d0eff9708d5dcc324888daa6be.jpg",
@@ -101,11 +99,11 @@ Ideal for daily consumption.`,
   {
     id: 7,
     name: "Honey",
-    price: 800,
+    price: 1000,
     qty: "500g",
     description: `Pure organic honey.
-Perfect size for small families.
 Enhances digestion naturally.
+Premium quality product.
 Free from artificial additives.`,
     stars: 4,
     link: "/honey-500",
@@ -121,7 +119,6 @@ Free from artificial additives.`,
     qty: "1KG",
     description: `Natural honey blended with almonds.
 Rich source of energy.
-Supports brain health.
 Premium quality product.`,
     stars: 5,
     link: "/almond-honey",
@@ -137,8 +134,7 @@ Premium quality product.`,
     qty: "1KG",
     description: `Pure honey mixed with cashews.
 Rich and delicious taste.
-Provides instant energy.
-Excellent for healthy lifestyle.`,
+Provides instant energy.`,
     stars: 5,
     link: "/cashew-honey",
     image: "https://i.pinimg.com/1200x/2c/96/3d/2c963dcd129b55343e3ca835b8968450.jpg",
@@ -148,13 +144,12 @@ Excellent for healthy lifestyle.`,
 
   {
     id: 10,
-    name: "Honey (Plain)",
-    price: 1000,
+    name: "Mix nuts Honey ",
+    price: 3000,
     qty: "1KG",
     description: `Unprocessed natural honey.
 No sugar or chemicals added.
-Good for immunity boost.
-Perfect for daily use.`,
+Good for immunity boost.`,
     stars: 4,
     link: "/plain-honey",
     image: "https://i.pinimg.com/736x/68/76/de/6876de97d8f93d12cbb591f667dcd393.jpg",
@@ -170,8 +165,8 @@ Perfect for daily use.`,
     qty: "250gm",
     description: `Cold pressed mustard oil.
 Strong natural aroma.
-Supports heart health.
-Ideal for traditional cooking.`,
+Used in cooking .
+Supports heart health.`,
     stars: 5,
     link: "/mustard-oil",
     image: "https://i.pinimg.com/736x/09/e1/27/09e1274a5054d7dafddfa1d48ba1366d.jpg",
@@ -186,7 +181,7 @@ Ideal for traditional cooking.`,
     qty: "250gm",
     description: `Pure sesame seed oil.
 Rich in antioxidants.
-Supports joint health.
+Used in dressings and cooking.
 Best for light cooking.`,
     stars: 5,
     link: "/sesame-oil",
@@ -202,8 +197,8 @@ Best for light cooking.`,
     qty: "250gm",
     description: `Healthy sunflower seed oil.
 Light and neutral taste.
-Good source of vitamin E.
-Ideal for frying and cooking.`,
+Best for frying and baking.
+Good source of vitamin E`,
     stars: 4,
     link: "/sunflower-oil",
     image: "https://i.pinimg.com/1200x/fd/7d/4a/fd7d4a519846aa38bf1d4895bd0355b8.jpg",
@@ -214,11 +209,10 @@ Ideal for frying and cooking.`,
   {
     id: 11,
     name: "Flax Seed",
-    price: 400,
-    qty: "500g",
+    price: 500,
+    qty: "200g",
     description: `Rich source of omega-3 fatty acids.
 Supports heart and brain health.
-Helps in weight management.
 Ideal for daily healthy diet.`,
     stars: 5,
     link: "/flax-seed",
@@ -230,12 +224,11 @@ Ideal for daily healthy diet.`,
   {
     id: 12,
     name: "Chia Seed",
-    price: 500,
-    qty: "500g",
+    price: 900,
+    qty: "200g",
     description: `High in fiber and protein.
 Improves digestion naturally.
-Supports weight loss.
-Great for smoothies and meals.`,
+Supports weight loss.`,
     stars: 5,
     link: "/chia-seed",
     image: "https://i.pinimg.com/736x/fc/11/b0/fc11b0edff07564f9ee485bb88896f5e.jpg",
@@ -245,13 +238,12 @@ Great for smoothies and meals.`,
 
   {
     id: 13,
-    name: "Char Maghaz",
-    price: 700,
-    qty: "500g",
+    name: "Watermelon Seeds",
+    price: 800,
+    qty: "200g",
     description: `Traditional mix of healthy seeds.
 Boosts brain performance.
-Rich in essential nutrients.
-Used in desserts and drinks.`,
+Rich in essential nutrients.`,
     stars: 4,
     link: "/char-maghaz",
     image: "https://i.pinimg.com/1200x/ff/e8/73/ffe8739d1ba9c95c3a4f587f3aed296b.jpg",
@@ -262,11 +254,10 @@ Used in desserts and drinks.`,
   {
     id: 14,
     name: "Sunflower Seeds with Shell",
-    price: 350,
-    qty: "500g",
+    price: 500,
+    qty: "250g",
     description: `Crunchy roasted sunflower seeds.
 Good source of healthy fats.
-Supports heart health.
 Perfect healthy snack option.`,
     stars: 4,
     link: "/sunflower-seeds",
@@ -278,12 +269,11 @@ Perfect healthy snack option.`,
   {
     id: 15,
     name: "Pumpkin Seeds",
-    price: 450,
-    qty: "500g",
+    price: 900,
+    qty: "200g",
     description: `Loaded with minerals and protein.
 Supports immunity system.
-Improves sleep quality.
-Ideal for salads and snacks.`,
+Improves sleep quality.`,
     stars: 5,
     link: "/pumpkin-seeds",
     image: "https://i.pinimg.com/736x/b7/3f/85/b73f85070612edd6acb98685679a316e.jpg",
@@ -295,12 +285,11 @@ Ideal for salads and snacks.`,
   {
     id: 19,
     name: "Pickle Mango",
-    price: 1700,
+    price: 1000,
     qty: "1KG",
     description: `Traditional mango pickle recipe.
 Rich spicy and tangy taste.
-Prepared with natural spices.
-Perfect with desi meals.`,
+Prepared with natural spices.`,
     stars: 5,
     link: "/pickle-mango",
     image: "https://i.pinimg.com/1200x/b2/89/85/b28985c4174ba4e0b5252542b0c45846.jpg",
@@ -311,12 +300,11 @@ Perfect with desi meals.`,
   {
     id: 20,
     name: "Pickle Lemon & Green Chilli",
-    price: 500,
+    price: 800,
     qty: "1KG",
     description: `Spicy lemon and green chilli mix.
 Strong desi flavor.
-Enhances taste of meals.
-Made with fresh ingredients.`,
+Enhances taste of meals.`,
     stars: 4,
     link: "/pickle-lemon-chilli",
     image: "https://i.pinimg.com/1200x/45/43/4f/45434f746f9a7670891d77072b85659c.jpg",
@@ -327,12 +315,11 @@ Made with fresh ingredients.`,
   {
     id: 21,
     name: "Pickle Carrot & Mango ",
-    price: 700,
+    price: 1000,
     qty: "1KG",
     description: `Sweet and tangy combination.
 Fresh carrot and mango used.
-Traditional home-style pickle.
-Perfect balance of spices.`,
+Traditional home-style pickle.`,
     stars: 5,
     link: "/pickle-carrot-mango",
     image: "https://i.pinimg.com/736x/03/2b/92/032b922b307f5ef97b20bac75aa23ac0.jpg",
@@ -343,12 +330,12 @@ Perfect balance of spices.`,
   {
     id: 22,
     name: "Pickle Carrot ",
-    price: 600,
+    price: 1000,
     qty: "1KG",
     description: `Fresh carrot pickle.
 Moderately spicy taste.
-Prepared using desi masala.
-Goes well with all meals.`,
+Tases great with meals.
+Prepared using desi masala.`,
     stars: 4,
     link: "/pickle-carrot",
     image: "https://i.pinimg.com/1200x/37/52/cc/3752cc725569cd82bab717c020eb1199.jpg",
@@ -359,12 +346,11 @@ Goes well with all meals.`,
   {
     id: 23,
     name: "Green Chatni",
-    price: 400,
+    price: 450,
     qty: "250g",
     description: `Freshly prepared green chutney.
 Made with herbs and spices.
-Adds freshness to meals.
-Perfect with snacks and BBQ.`,
+Adds freshness to meals.`,
     stars: 5,
     link: "/green-chatni",
     image: "https://i.pinimg.com/1200x/f5/5a/04/f55a04f37fd4e4933a9a901703346589.jpg",
@@ -413,8 +399,7 @@ Perfect with snacks and BBQ.`,
     qty: "1KG",
     description: `Premium quality Mazafati dates.
 Soft texture and rich taste.
-High natural energy source.
-Perfect for daily consumption.`,
+High natural energy source.`,
     stars: 5,
     link: "/mazafati-dates",
     image: "https://i.pinimg.com/736x/17/72/4d/17724d36b2107062c41654d1d4af0363.jpg",
@@ -425,12 +410,11 @@ Perfect for daily consumption.`,
   {
     id: 27,
     name: "Mazafati Dates with Almond",
-    price: 1500,
+    price: 1800,
     qty: "1KG",
     description: `Premium dates stuffed with almonds.
 Rich in nutrients and energy.
-Delicious healthy snack.
-Ideal for gifting purposes.`,
+Delicious healthy snack.`,
     stars: 5,
     link: "/mazafati-almond-dates",
     image: "https://i.pinimg.com/1200x/cd/f8/c9/cdf8c99369d4c9e1b45243c20a015259.jpg",
@@ -446,8 +430,7 @@ Ideal for gifting purposes.`,
     qty: "1KG",
     description: `Special jaggery blended with nuts.
 Enriched with desi ghee.
-Natural energy booster.
-Traditional healthy sweet.`,
+Natural energy booster.`,
     stars: 5,
     link: "/gur-special",
     image: "https://i.pinimg.com/736x/6f/be/05/6fbe0518591473c388ba944225301a6a.jpg",
@@ -457,13 +440,13 @@ Traditional healthy sweet.`,
 
   {
     id: 29,
-    name: "Gur Normal ",
+    name: "Gur",
     price: 500,
     qty: "1KG",
     description: `Pure natural jaggery.
 No chemicals or additives.
-Healthy sugar alternative.
-Used in daily cooking.`,
+Traditional sweetener.
+Healthy sugar alternative.`,
     stars: 4,
     link: "/gur-normal",
     image: "https://i.pinimg.com/736x/56/a7/ff/56a7ff90859e83c19595ea693f8ad488.jpg",
@@ -475,12 +458,12 @@ Used in daily cooking.`,
   {
     id: 30,
     name: "Makki Ata ",
-    price: 200,
+    price: 260,
     qty: "1KG",
     description: `Freshly ground maize flour.
 Traditional desi quality.
-Naturally gluten free.
-Perfect for makki roti.`,
+Best for health.
+Naturally gluten free.`,
     stars: 4,
     link: "/makki-ata",
     image: "https://i.pinimg.com/736x/36/f3/d3/36f3d36be18e744f044d3867be984e5e.jpg",
@@ -491,12 +474,12 @@ Perfect for makki roti.`,
   {
     id: 31,
     name: "Desi Ata ",
-    price: 170,
+    price: 250,
     qty: "1KG",
     description: `Stone ground wheat flour.
 Soft and fresh texture.
-Ideal for daily roti.
-Traditional desi taste.`,
+Good for digestion.
+Ideal for daily roti.`,
     stars: 4,
     link: "/desi-ata",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0JB8jPHPHozAKJbZWnSJYkwiK2IK9Bcep9A&s",
@@ -512,8 +495,7 @@ Traditional desi taste.`,
     qty: "1KG",
     description: `Organic brown sugar.
 Natural sweetness retained.
-Healthier sugar option.
-Ideal for baking and tea.`,
+Healthier sugar option.`,
     stars: 5,
     link: "/brown-sugar",
     image: "https://i.pinimg.com/1200x/ee/3e/46/ee3e4636715143bc5760335032279e2c.jpg",
@@ -528,8 +510,7 @@ Ideal for baking and tea.`,
     qty: "1KG",
     description: `Fresh roasted peanuts.
 High in protein and fiber.
-Healthy snack option.
-Perfect for daily use.`,
+Healthy snack option.`,
     stars: 4,
     link: "/peanuts",
     image: "https://i.pinimg.com/1200x/29/1b/3e/291b3e21da800eba78eb4430ba108536.jpg",
