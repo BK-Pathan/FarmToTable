@@ -1,17 +1,17 @@
 // 🔹 Imports (always on top)
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-
 // ❌ analytics zaroori nahi abhi, isliye hata diya
 
 // 🔹 Firebase config
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIRE_API_KEY,
-  authDomain: import.meta.env.VITE_FIRE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIRE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIRE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIRE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIRE_APP_ID
+  apiKey: "AIzaSyAzAI8H1DK8D71VcB-WxBFFSxr7t-5I9_Q",
+  authDomain: "myproductsapp-b1cb2.firebaseapp.com",
+  projectId: "myproductsapp-b1cb2",
+  storageBucket: "myproductsapp-b1cb2.appspot.com",
+  messagingSenderId: "390078274624",
+  appId: "1:390078274624:web:54203d010372e54cf213a5",
+  measurementId: "G-T8HPZDV0MN",
 };
 
 // 🔹 Initialize Firebase
