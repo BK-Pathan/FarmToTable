@@ -1,42 +1,109 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+@media (max-width: 480px) {
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+  /* 🔒 Hard lock the viewport */
+  html, body {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    touch-action: pan-x;
+    overscroll-behavior-x: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  /* 🚫 Stop most elements from exceeding screen, exclude testimonials */
+  *:not(.testimonial-container):not(.testimonial-container *) {
+    max-width: 100vw !important;
+    box-sizing: border-box;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  /* 🔥 Kill all vw-based overflow for specific containers */
+  [style*="vw"],
+  .navbar,
+  .navbar-container,
+  .nav-links,
+  .bs-grid,
+  .adv-grid,
+  .coming-soon-section,
+  .site-footer {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
   }
+
+  /* 🖼 Banner */
+  .banner-container {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0;          /* no extra space at top */
+    padding: 0;         /* no extra space on sides */
+  }
+
+  .banner-container img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+  }
+
+  /* 🧱 Cards inside grids */
+  .bs-grid .card,
+  .bs-grid img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* ☰ Side menu */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-x: hidden;
+    z-index: 999;
+    background-color: #fff;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  /* ⚡ Sections spacing (but not top of banner or bottom of footer) */
+  .adv-grid,
+  .coming-soon-section {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 0 10px;   /* horizontal padding only */
+    margin: 10px 0;    /* vertical spacing between sections */
+    overflow-x: hidden !important;
+  }
+
+  /* Footer stays at bottom, no extra spacing */
+  .site-footer {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 0 10px;   /* only horizontal padding */
+    margin: 0;          /* no vertical margin */
+    overflow-x: hidden !important;
+  }
+
+  /* 🎯 Testimonials fix */
+ .testimonial-container {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  gap: 10px;
+  padding: 10px 10px 10px 0; /* top, right, bottom, left */
+}
+.testimonial-container .card {
+  flex: 0 0 auto;
+  width: 80%;
+  max-width: 300px;
+  margin-left: 0;  /* gap handles spacing */
+  margin-right: 0; /* no extra margin needed */
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
 import CartPanel from "./pages/CartPanel";
@@ -11,6 +12,9 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import FAQs from "./pages/FAQs";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import ScrollToTop from "../src/components/ScrollTop"; // ✅ ADD THIS
+
+import "./App.css";
+
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -110,6 +114,8 @@ function App() {
   <Route path="/product" element={<Product addToCart={addToCart} />} />
   <Route path="/products" element={<Product addToCart={addToCart} />} />
   <Route path="/product/:category" element={<Product addToCart={addToCart} />} />
+
+ {/* <Route path="/product/:id" element={<ProductDetail addToCart={addToCart} />} /> */}
 
   {/* ✅ Footer Pages */}
   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
