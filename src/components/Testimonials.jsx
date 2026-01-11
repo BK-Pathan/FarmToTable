@@ -24,7 +24,7 @@ const reviews = [
     name: 'Fatima Shah',
     photo: 'https://i.pinimg.com/736x/dd/8d/49/dd8d49aab5eb4b20c06becdd80f9ca8b.jpg',
     rating: 5,
-    feedback: 'Love the packaging and quality. Highly recommended!'
+    feedback: 'All products are good. Highly recommended!'
   }
 ];
 

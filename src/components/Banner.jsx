@@ -3,7 +3,7 @@ import "./banner.css";
 
 import banner1 from "./../assets/images/image1.png";
 import banner2 from "./../assets/images/image2.png";
-import banner3 from "./../assets/images/image3.png";
+import banner3 from "./../assets/images/image4.jpg";
 
 export default function Banner() {
   const banners = [
