@@ -36,7 +36,7 @@ Ideal for daily cooking use.`,
   {
     id: 3,
     name: "Pure Buffalo Butter ",
-    price: 6000,
+    price: 2000,
     qty: "1KG",
     description: `Freshly churned buffalo butter.
 No artificial colors or flavors.
@@ -52,7 +52,7 @@ Perfect for breakfast.`,
   {
     id: 4,
     name: "Pure Cow Butter",
-    price: 6000,
+    price: 2000,
     qty: "1KG",
     description: `Made from fresh cow milk.
 Naturally soft and flavorful.
