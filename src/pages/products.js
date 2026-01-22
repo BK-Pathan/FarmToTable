@@ -1,4 +1,8 @@
 // src/pages/products.js
+
+
+
+
 export const products = [
 
   // 1️⃣ Ghee & Butter
@@ -84,7 +88,7 @@ No added preservatives.`,
   {
     id: 6,
     name: "Honey ",
-    price: 1500,
+    price: 2000,
     qty: "1KG",
     description: `100% pure natural honey.
 Collected from natural sources.
@@ -99,7 +103,7 @@ Boosts immunity and energy.`,
   {
     id: 7,
     name: "Honey",
-    price: 1000,
+    price: 1200,
     qty: "500g",
     description: `Pure organic honey.
 Enhances digestion naturally.
@@ -115,7 +119,7 @@ Free from artificial additives.`,
   {
     id: 8,
     name: "Almond Honey",
-    price: 2600,
+    price: 3500,
     qty: "1KG",
     description: `Natural honey blended with almonds.
 Rich source of energy.
@@ -130,7 +134,7 @@ Premium quality product.`,
   {
     id: 9,
     name: "Cashew Honey",
-    price: 3000,
+    price: 4000,
     qty: "1KG",
     description: `Pure honey mixed with cashews.
 Rich and delicious taste.
@@ -145,7 +149,7 @@ Provides instant energy.`,
   {
     id: 10,
     name: "Mix nuts Honey ",
-    price: 3000,
+    price: 4000,
     qty: "1KG",
     description: `Unprocessed natural honey.
 No sugar or chemicals added.
