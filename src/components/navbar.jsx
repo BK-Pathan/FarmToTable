@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
-import logoo from "./../assets/images/Logoo.png";
+import logo2 from "./../assets/images/logo2.png";
 import "./navbar.css";
 
 import { products } from "../pages/products"; // ✅ IMPORTANT
@@ -26,7 +26,7 @@ export default function Navbar({ toggleCart, cartCount }) {
       <div className="navbar-container">
 
         <Link to="/" className="logo">
-          <img src={logoo} alt="FarmToTable Logo" />
+          <img src={logo2} alt="FarmToTable Logo" />
         </Link>
 
         <button
