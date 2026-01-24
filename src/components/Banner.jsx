@@ -11,21 +11,21 @@ export default function Banner() {
   const banners = [
     { 
       img: banner1, 
-      link: "./products",
+      link: "",
       headline: "Pure Taste. Real Quality.",
       subtext: "Farm-fresh products you can trust for your family.",
       cta: "Shop Now"
     },
     { 
       img: banner2, 
-      link: "./products",
+      link: "",
       headline: "Healthy Living Starts Here",
       subtext: "Natural, chemical-free products for a better lifestyle.",
       cta: "Explore Products"
     },
     { 
       img: banner3, 
- link: "./products",
+ link: "",
 headline: "Taste Freshness, Delivered Fast",
 subtext: "Limited stock — order today & savor the difference.",
 cta: "Get Yours Now"
