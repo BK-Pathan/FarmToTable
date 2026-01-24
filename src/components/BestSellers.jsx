@@ -5,7 +5,7 @@ import ProductCard from './ProductCard';
 import desiGhee1kg from '../assets/images/desi.png';
 import desiGhee500g from '../assets/images/ghee.png';
 import honey1kg from '../assets/images/hone.jpg';
-import honey500g from '../assets/images/sle.jpg';
+import honey500g from '../assets/images/honey.png';
 
 const products = [
   { id: 'ghee-1', title: 'Desi Ghee Pure Buffalo– 1kg', description: 'Pure traditional desi ghee for healthier cooking and taste.', price: 'PKR 3500', image: desiGhee1kg },
