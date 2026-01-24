@@ -4,7 +4,7 @@ import ProductCard from './ProductCard';
 
 import desiGhee1kg from '../assets/images/desi.png';
 import desiGhee500g from '../assets/images/ghee.png';
-import honey1kg from '../assets/images/bee.jpg';
+import honey1kg from '../assets/images/hone.jpg';
 import honey500g from '../assets/images/sle.jpg';
 
 const products = [
