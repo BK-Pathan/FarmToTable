@@ -1,34 +1,41 @@
 import React from "react";
-import "../pages/ProductPage.css"
+import "./product.css";
 
 export default function DesiGhee({ addToCart }) {
-
-  const handleAddToCart = () => {
-    addToCart({
-      id: 7, // unique ID for Desi Ghee
-      name: "Desi Ghee",
-      price: 3200, // price per kg
-      quantity: 1 // default quantity
-    });
-  };
-
   return (
-    <section className="product-page">
-      <img src="/images/desi-ghee.jpg" alt="Desi Ghee" />
-      <div className="product-info">
-        <h1>Desi Ghee</h1>
-        <p className="price">Rs. 3,200 / kg</p>
-        <p>Delivery: 3–4 days</p>
-        <p className="out-stock">Out of Stock</p>
-        <p className="feedback">⭐⭐⭐⭐⭐ (5/5)</p>
-        <h3>Description</h3>
-        <p>Desi ghee makhan ko dheemi aanch par pakakar tayar kiya jata hai.</p>
+    <div className="product-page">
+      <h1 className="product-title">Desi Ghee Pure Buffalo</h1>
 
-        {/* Add to Cart Button */}
-        <button className="add-to-cart-btn" onClick={handleAddToCart}>
-          Add to Cart
-        </button>
+      <div className="product-layout">
+        <div className="product-detail-container">
+          <img
+            src="/images/desi-ghee.jpg" // ✅ Apna image path
+            alt="Desi Ghee Pure Buffalo"
+          />
+          <div className="product-info">
+            <p className="price">PKR 3500</p>
+            <p>Quantity: 1KG</p>
+            <p className="description">
+              Made from pure buffalo milk. Prepared using traditional methods. Free from chemicals and preservatives & Rich taste.
+            </p>
+            <div className="stars">
+              ★★★★★
+            </div>
+            <button
+              onClick={() =>
+                addToCart({
+                  id: 1,
+                  name: "Desi Ghee Pure Buffalo",
+                  price: 3500,
+                  quantity: 1,
+                })
+              }
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
