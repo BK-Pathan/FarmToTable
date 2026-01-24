@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // ← Add this
 import "./banner.css";
 
 import banner1 from "./../assets/images/image1.png";

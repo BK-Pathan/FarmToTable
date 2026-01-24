@@ -98,6 +98,7 @@
   background: rgba(255, 255, 255, 0.15); /* light semi-transparent bg */
   border-radius: 10px;
   backdrop-filter: blur(3px);   /* modern glass effect */
+  padding-bottom: 2px !important;
 }
 
 /* Headline */
