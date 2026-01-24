@@ -85,9 +85,24 @@ No added preservatives.`,
   },
 
   // 2️⃣ Honey
+ {
+  id: 6,
+  name: "Small Bee Honey",
+  price: 4000,
+  qty: "1KG",
+  description: `Pure 100% natural and organic honey.
+Collected from small bees.
+No sugar or additives.`,
+  stars: 5,
+  link: "/small-bee-honey",
+  image: "https://i.pinimg.com/736x/4d/cc/58/4dcc58423a0d2cdedd0a24e6fb2e4513.jpg",
+  category: "Honey",
+  slug: "honey"
+},
+
   {
-    id: 6,
-    name: "Honey ",
+    id: 7,
+    name: " Plain-Honey ",
     price: 2000,
     qty: "1KG",
     description: `100% pure natural honey.
@@ -101,8 +116,8 @@ Boosts immunity and energy.`,
   },
 
   {
-    id: 7,
-    name: "Honey",
+    id: 8,
+    name: "Plain-Honey",
     price: 1200,
     qty: "500g",
     description: `Pure organic honey.
@@ -111,13 +126,13 @@ Premium quality product.
 Free from artificial additives.`,
     stars: 4,
     link: "/honey-500",
-    image: "https://i.pinimg.com/736x/9e/49/c6/9e49c64ffdc1dce2f0a3665c1e0cb67b.jpg",
+    image: "https://i.pinimg.com/736x/fd/16/d1/fd16d1eb7810767d3a0518b53b10675a.jpg",
     category: "Honey",
     slug: "honey"
   },
 
   {
-    id: 8,
+    id: 9,
     name: "Almond Honey",
     price: 3500,
     qty: "1KG",
@@ -132,7 +147,7 @@ Premium quality product.`,
   },
 
   {
-    id: 9,
+    id: 10,
     name: "Cashew Honey",
     price: 4000,
     qty: "1KG",
@@ -147,7 +162,7 @@ Provides instant energy.`,
   },
 
   {
-    id: 10,
+    id: 11,
     name: "Mix nuts Honey ",
     price: 4000,
     qty: "1KG",
@@ -163,7 +178,7 @@ Good for immunity boost.`,
 
   // 4️⃣ Oils (qty preserved)
   {
-    id: 16,
+    id: 12,
     name: "Mustard Oil",
     price: 450,
     qty: "250gm",
@@ -179,7 +194,7 @@ Supports heart health.`,
   },
 
   {
-    id: 17,
+    id: 13,
     name: "Sesame Oil",
     price: 550,
     qty: "250gm",
@@ -195,7 +210,7 @@ Best for light cooking.`,
   },
 
   {
-    id: 18,
+    id: 14,
     name: "Sunflower Seed Oil",
     price: 500,
     qty: "250gm",
@@ -211,7 +226,7 @@ Good source of vitamin E`,
   },
     // 3️⃣ Seeds
   {
-    id: 11,
+    id: 15,
     name: "Flax Seed",
     price: 500,
     qty: "200g",
@@ -226,7 +241,7 @@ Ideal for daily healthy diet.`,
   },
 
   {
-    id: 12,
+    id: 16,
     name: "Chia Seed",
     price: 900,
     qty: "200g",
@@ -241,7 +256,7 @@ Supports weight loss.`,
   },
 
   {
-    id: 13,
+    id: 17,
     name: "Watermelon Seeds",
     price: 800,
     qty: "200g",
@@ -256,7 +271,7 @@ Rich in essential nutrients.`,
   },
 
   {
-    id: 14,
+    id: 18,
     name: "Sunflower Seeds with Shell",
     price: 500,
     qty: "250g",
@@ -271,7 +286,7 @@ Perfect healthy snack option.`,
   },
 
   {
-    id: 15,
+    id: 19,
     name: "Pumpkin Seeds",
     price: 900,
     qty: "200g",
@@ -287,7 +302,7 @@ Improves sleep quality.`,
 
   // 5️⃣ Achar & Chutneys
   {
-    id: 19,
+    id: 20,
     name: "Pickle Mango",
     price: 1000,
     qty: "1KG",
@@ -302,7 +317,7 @@ Prepared with natural spices.`,
   },
 
   {
-    id: 20,
+    id: 21,
     name: "Pickle Lemon & Green Chilli",
     price: 800,
     qty: "1KG",
@@ -317,7 +332,7 @@ Enhances taste of meals.`,
   },
 
   {
-    id: 21,
+    id: 22,
     name: "Pickle Carrot & Mango ",
     price: 1000,
     qty: "1KG",
@@ -332,7 +347,7 @@ Traditional home-style pickle.`,
   },
 
   {
-    id: 22,
+    id: 23,
     name: "Pickle Carrot ",
     price: 1000,
     qty: "1KG",
@@ -348,7 +363,7 @@ Prepared using desi masala.`,
   },
 
   {
-    id: 23,
+    id: 24,
     name: "Green Chatni",
     price: 450,
     qty: "250g",

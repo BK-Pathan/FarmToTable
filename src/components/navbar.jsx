@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
-import logo2 from "./../assets/images/logo2.png";
+import logo2 from "./../assets/images/logo3.png";
 import "./navbar.css";
 
 import { products } from "../pages/products"; // ✅ IMPORTANT
