@@ -62,7 +62,7 @@ cta: "Get Yours Now"
         <div className="banner-text">
           <h1 className="banner-headline">{banners[current].headline}</h1>
           <p className="banner-subtext">{banners[current].subtext}</p>
-          <button className="banner-cta">{banners[current].cta}</button>
+         
         </div>
       </a>
 
