@@ -67,3 +67,51 @@
   .test-grid { grid-template-columns: repeat(1, 1fr); } /* 2 cards per row for mobile */
   .testimonials { padding: 28px 12px; }
 }
+/* Container to hold button on right */
+.test-btn-container {
+  display: flex;
+  justify-content: flex-end; /* Align button to the right */
+  margin-top: 20px; /* Thoda spacing upar se */
+}
+
+/* Button style */
+.test-btn {
+  background: #2f855a;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover animation */
+.test-btn:hover {
+  background: #276749;
+  transform: translateX(4px); /* Slight slide effect */
+}
+
+/* Optional ripple effect on click */
+.test-btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, transform 0.4s;
+  transform: scale(0);
+}
+
+.test-btn:active::after {
+  opacity: 1;
+  transform: scale(2);
+  transition: transform 0.3s, opacity 0.5s;
+}

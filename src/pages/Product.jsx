@@ -117,49 +117,6 @@ export default function Product({ addToCart }) {
         </div>
       </div>
 
-      {/* FEEDBACK SECTION */}
-      <div className="feedback-section">
-        <h2>Share Your Experience</h2>
-
-        {message && <div className={`feedback-message ${messageType}`}>{message}</div>}
-
-        <input value={name} onChange={e => setName(e.target.value)} placeholder="Your Name" />
-        <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Your Email" />
-        <textarea value={feedbackText} onChange={e => setFeedbackText(e.target.value)} placeholder="Write feedback..." />
-
-        <div className="star-rating">
-          {[1, 2, 3, 4, 5].map(s => (
-            <span
-              key={s}
-              className={s <= rating ? "star filled" : "star"}
-              onClick={() => setRating(s)}
-            >
-              ★
-            </span>
-          ))}
-        </div>
-
-        <button onClick={handleSubmit} disabled={loading}>
-          {loading ? "Submitting..." : "Submit"}
-        </button>
-
-        <div className="all-feedbacks">
-          {feedbacks.length === 0 ? (
-            <p>No feedbacks yet.</p>
-          ) : (
-            feedbacks.map(fb => (
-              <div key={fb.id} className="feedback-item">
-                <p><strong>{fb.name}</strong>{fb.email && ` (${fb.email})`}</p>
-                <div>
-                  {"★".repeat(fb.rating)}
-                  {"☆".repeat(5 - fb.rating)}
-                </div>
-                <p>{fb.feedback}</p>
-              </div>
-            ))
-          )}
-        </div>
-      </div>
     </div>
   );
 }

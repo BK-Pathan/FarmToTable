@@ -58,6 +58,9 @@ export default function Navbar({ toggleCart, cartCount }) {
 
           <Link to="/products">Products</Link>
           <Link to="/contact">Contact</Link>
+          <Link to="/feedback" className="feedback-nav-link">
+  Reviews
+</Link>
         </div>
 
         <div className="nav-actions">

@@ -12,6 +12,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import FAQs from "./pages/FAQs";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import ScrollToTop from "../src/components/ScrollTop"; // ✅ ADD THIS
+import Feedback from "./pages/Feedback";
 
 import "./App.css";
 
@@ -98,7 +99,7 @@ function App() {
         removeItem={removeItem}
       />
 
-      <Routes>
+ <Routes>
   {/* Home */}
   <Route path="/" element={<Home addToCart={addToCart} />} />
 
@@ -115,14 +116,16 @@ function App() {
   <Route path="/products" element={<Product addToCart={addToCart} />} />
   <Route path="/product/:category" element={<Product addToCart={addToCart} />} />
 
- {/* <Route path="/product/:id" element={<ProductDetail addToCart={addToCart} />} /> */}
+  {/* Feedback Page ✅ */}
+  <Route path="/feedback" element={<Feedback />} />
 
-  {/* ✅ Footer Pages */}
+  {/* Footer Pages */}
   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
   <Route path="/faqs" element={<FAQs />} />
   <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
 </Routes>
  <Footer/>
+
     </Router>
    
   );

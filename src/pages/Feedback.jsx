@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { db } from "./fire";
-import { collection, addDoc, getDocs, query, orderBy, serverTimestamp } from "firebase/firestore";
+
 import "./feedback.css";
+
+import { db } from "./fire";
+import {
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  serverTimestamp,
+  onSnapshot
+} from "firebase/firestore";
 
 export default function Feedback() {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -11,38 +20,32 @@ export default function Feedback() {
   const [rating, setRating] = useState(5);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState(""); // success | error
+  const [messageType, setMessageType] = useState("");
 
-  // FETCH FEEDBACKS
-  const fetchFeedbacks = async () => {
-    try {
-      const q = query(collection(db, "feedbacks"), orderBy("timestamp", "desc"));
-      const snapshot = await getDocs(q);
-      setFeedbacks(snapshot.docs.map(d => ({ id: d.id, ...d.data() })));
-    } catch (err) {
-      console.error("Fetch error:", err);
-    }
-  };
-
+  // 🔹 Real-time feedbacks
   useEffect(() => {
-    fetchFeedbacks();
+    const q = query(collection(db, "feedbacks"), orderBy("timestamp", "desc"));
+    const unsub = onSnapshot(q, snap =>
+      setFeedbacks(snap.docs.map(d => ({ id: d.id, ...d.data() })))
+    );
+    return () => unsub();
   }, []);
 
   const handleSubmit = async () => {
-    if (!name.trim() || !email.trim() || !feedbackText.trim()) {
-      setMessage("Please fill all fields.");
+    if (!name || !email || !feedbackText) {
+      setMessage("Please fill all fields");
       setMessageType("error");
       return;
     }
 
     setLoading(true);
-    setMessage("");
+
     try {
       await addDoc(collection(db, "feedbacks"), {
-        name: name.trim(),
-        email: email.trim(),
-        feedback: feedbackText.trim(),
-        rating: Number(rating),
+        name,
+        email,
+        feedback: feedbackText,
+        rating,
         timestamp: serverTimestamp()
       });
 
@@ -53,63 +56,55 @@ export default function Feedback() {
 
       setMessage("Feedback submitted successfully ✅");
       setMessageType("success");
-
-      fetchFeedbacks();
-    } catch (err) {
-      console.error("Submit error:", err);
-      setMessage("Something went wrong. Please try again ❌");
+    } catch {
+      setMessage("Something went wrong ❌");
       setMessageType("error");
     } finally {
       setLoading(false);
-      setTimeout(() => {
-        setMessage("");
-        setMessageType("");
-      }, 3000);
     }
   };
 
   return (
-    <div className="feedback-page">
-      <h1>Share Your Experience</h1>
+<div className="feedback-page">
 
-      {message && <div className={`feedback-message ${messageType}`}>{message}</div>}
+  {/* Card with only form */}
+  <div className="feedback-container">
+    <h1>Customer Feedback</h1>
 
+    <div className="feedback-form">
       <input value={name} onChange={e => setName(e.target.value)} placeholder="Your Name" />
       <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Your Email" />
       <textarea value={feedbackText} onChange={e => setFeedbackText(e.target.value)} placeholder="Write feedback..." />
 
       <div className="star-rating">
         {[1, 2, 3, 4, 5].map(s => (
-          <span
-            key={s}
-            className={s <= rating ? "star filled" : "star"}
-            onClick={() => setRating(s)}
-          >
-            ★
-          </span>
+          <span key={s} className={s <= rating ? "star filled" : "star"} onClick={() => setRating(s)}>★</span>
         ))}
       </div>
 
       <button onClick={handleSubmit} disabled={loading}>
-        {loading ? "Submitting..." : "Submit"}
+        {loading ? "Submitting..." : "Submit Feedback"}
       </button>
-
-      <h2>All Feedbacks</h2>
-      <div className="all-feedbacks">
-        {feedbacks.map(fb => (
-          <div key={fb.id} className="feedback-item">
-            <p>
-              <strong>{fb.name}</strong>
-              {fb.email && ` (${fb.email})`}
-            </p>
-            <div>
-              {"★".repeat(fb.rating)}
-              {"☆".repeat(5 - fb.rating)}
-            </div>
-            <p>{fb.feedback}</p>
-          </div>
-        ))}
-      </div>
     </div>
+  </div>
+
+  {/* Feedback messages and list outside the card */}
+  <div className="feedback-outside">
+    {feedbacks.length > 0 && <h2 className="feedback-heading">See what our customers say</h2>}
+    {message && <div className={`msg ${messageType}`}>{message}</div>}
+
+    <div className="feedback-list">
+      {feedbacks.map(f => (
+        <div key={f.id} className="feedback-item">
+          <strong>{f.name}</strong>
+          <div>{"★".repeat(f.rating)}{"☆".repeat(5 - f.rating)}</div>
+          <p>{f.feedback}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</div>
+
   );
 }

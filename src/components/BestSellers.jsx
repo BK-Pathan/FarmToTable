@@ -1,6 +1,8 @@
 import React from 'react';
 import './bestSellers.css';
 import ProductCard from './ProductCard';
+import { useNavigate } from 'react-router-dom';
+
 
 import desiGhee1kg from '../assets/images/desi.png';
 import desiGhee500g from '../assets/images/ghee.png';
@@ -15,14 +17,19 @@ const products = [
 ];
 
 export default function BestSellers({ addToCart }) {
+  const navigate = useNavigate();
+
   return (
     <section className="bs-section">
       <div className="bs-wrap container">
-        <header className="bs-top">
+
+        {/* Center Heading */}
+        <div className="bs-header-center">
           <h2>Best Sellers</h2>
           <p className="bs-subtitle">Our most-loved pantry essentials</p>
-        </header>
+        </div>
 
+        {/* Products Grid */}
         <div className="bs-grid">
           {products.map((p) => (
             <ProductCard
@@ -38,6 +45,17 @@ export default function BestSellers({ addToCart }) {
             />
           ))}
         </div>
+
+        {/* See All Button — END of cards */}
+        <div className="bs-actions">
+          <button
+            className="see-all-btn"
+            onClick={() => navigate('/products')}
+          >
+            See All →
+          </button>
+        </div>
+
       </div>
     </section>
   );

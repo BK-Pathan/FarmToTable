@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // ✅ Import Link
 import './testimonials.css';
 
 const reviews = [
@@ -28,20 +29,29 @@ const reviews = [
   }
 ];
 
-function Stars({ count=5 }){
-  const arr = Array.from({length:5});
+function Stars({ count = 5 }) {
+  const arr = Array.from({ length: 5 });
   return (
     <div className="star-row" aria-hidden>
       {arr.map((_, i) => (
-        <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill={i < count ? '#f59e0b' : 'none'} stroke="#f59e0b" strokeWidth="1" style={{ marginRight: 2 }}>
+        <svg
+          key={i}
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill={i < count ? '#f59e0b' : 'none'}
+          stroke="#f59e0b"
+          strokeWidth="1"
+          style={{ marginRight: 2 }}
+        >
           <path d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.796 1.402 8.17L12 18.896l-7.336 3.873 1.403-8.17L.133 9.211l8.2-1.193z"></path>
         </svg>
       ))}
     </div>
-  )
+  );
 }
 
-export default function Testimonials(){
+export default function Testimonials() {
   return (
     <section className="testimonials">
       <div className="container">
@@ -64,6 +74,15 @@ export default function Testimonials(){
             </div>
           ))}
         </div>
+
+        {/* ✅ Feedback Button */}
+        <div className="test-btn-container">
+          <Link to="/feedback" className="test-btn">
+            Give Your Feedback
+          </Link>
+        </div>
+       
+
       </div>
     </section>
   );

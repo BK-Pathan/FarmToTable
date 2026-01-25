@@ -159,3 +159,34 @@
     font-size: 0.85rem;
   }
 }
+.bs-header-center {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.bs-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.see-all-btn {
+  background: transparent;
+  border: 1px solid #2f855a;
+  color: #2f855a;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.see-all-btn:hover {
+  background: #2f855a;
+  color: #fff;
+}
+.bs-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
