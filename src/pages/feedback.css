@@ -266,3 +266,8 @@
   margin-bottom: 20px;
   font-weight: 600;
 }
+.feedback-email {
+  font-size: 0.85rem;
+  color: #6b7280 !important; /* thoda greyish */
+  margin-bottom: 5px;
+}
