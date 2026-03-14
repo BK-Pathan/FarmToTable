@@ -1,10 +1,9 @@
 .page {
-  padding: 20px;
+  padding: 20px 60px;
   margin-top: 120px;
   font-family: Arial, sans-serif;
-  width: 98.8vw;
+  width: 100%;
   box-sizing: border-box;
-  text-align: justify;
 }
 
 .back-button {
@@ -15,16 +14,16 @@
 
 .info {
   display: flex;
-  flex-direction: row;
-  gap: 40px;
+  gap: 50px;
   align-items: flex-start;
-  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: row-reverse; /* IMAGE RIGHT, TEXT LEFT */
 }
 
 .image {
   margin-top: 40px;
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 700px;
   object-fit: cover;
   border-radius: 10px;
   flex-shrink: 0; /* prevent shrinking */
@@ -33,8 +32,7 @@
 .details {
   flex: 1;
   min-width: 250px;
-  max-width: 500px;
-  margin-top: 10px;
+  text-align: justify;
 }
 
 .details h1 {
@@ -43,6 +41,17 @@
 
 .details h2 {
   color: green;
+  margin-top: 20px;
+}
+
+.details ul.key-features {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.details ul.key-features li {
+  margin-bottom: 8px;
+  list-style-type: disc;
 }
 
 .stars {
@@ -77,8 +86,8 @@
 /* Responsive tweaks */
 @media (max-width: 1024px) {
   .info {
-    flex-direction: column;
-    align-items: center; /* center items horizontally */
+    flex-direction: column; /* stack vertically on smaller screens */
+    align-items: center;
     gap: 20px;
   }
 
@@ -88,19 +97,18 @@
     height: 350px;
     margin-top: 0;
   }
-.name{
-    text-align: left !important;
-}
+
   .details {
     max-width: 100%;
-    text-align: justify; /* optional: center text for smaller screens */
+    text-align: justify;
   }
 
+  /* CENTER BUTTONS */
   .add-to-cart-btn,
   .back-btn {
-    width: 80%; /* more visible width */
-    margin-left: 0;
-    margin-top: 10px;
+    width: 80%;
+    margin: 10px auto;
+    display: block;
   }
 }
 
@@ -114,6 +122,7 @@
     font-size: 18px;
   }
 }
+
 /* Button style */
 .test-btn {
   background: #2f855a !important;
@@ -132,7 +141,7 @@
 .test-btn:hover {
   background: #276749 !important;
   transform: translateX(4px); /* Slight slide effect */
-  color:  white !important;
+  color: white !important;
 }
 
 /* Optional ripple effect on click */

@@ -98,6 +98,23 @@ export default function ProductDetail({ addToCart }) {
           </div>
           <p>{product.description}</p>
 
+        {product.organicInfo && (
+  <p className="organic-info">
+    <strong>Organic Info:</strong> {product.organicInfo}
+  </p>
+)}
+
+{product.keyFeatures && product.keyFeatures.length > 0 && (
+  <div className="key-features-section">
+     <strong>Key-Features:</strong> {/* Heading outside the <ul> */}
+    <ul className="key-features">
+      {product.keyFeatures.map((feature, index) => (
+        <li key={index}>{feature}</li>
+      ))}
+    </ul>
+  </div>
+)}
+
           {/* Add to Cart */}
           <button
             className="add-to-cart-btn"
