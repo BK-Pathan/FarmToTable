@@ -10,6 +10,7 @@
   perspective: 1000px;
   color: #222;
   background-color: #f9fafb;
+ 
 }
 
 .checkout-container:hover {
@@ -223,6 +224,8 @@ textarea {
   .checkout-page {
     margin: 20px 10px;
     padding: 25px 15px;
+   margin-top: 50px;
+
   }
 
 }
