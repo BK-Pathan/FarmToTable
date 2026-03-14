@@ -37,13 +37,14 @@ export default function CheckoutPage() {
       )
       .join("\n");
 
-    const msg = `Order Details:
+   const msg = `Order Details:
 
 Name: ${form.name}
 Email: ${form.email}
 Phone: ${form.phone}
 City: ${form.city}
 Address: ${form.address}
+Note: ${form.note}
 
 Cart Items:
 ${itemsText}
