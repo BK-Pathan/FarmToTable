@@ -1,0 +1,158 @@
+.page {
+  padding: 20px;
+  margin-top: 120px;
+  font-family: Arial, sans-serif;
+  width: 98.8vw;
+  box-sizing: border-box;
+  text-align: justify;
+}
+
+.back-button {
+  margin-bottom: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.image {
+  margin-top: 40px;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0; /* prevent shrinking */
+}
+
+.details {
+  flex: 1;
+  min-width: 250px;
+  max-width: 500px;
+  margin-top: 10px;
+}
+
+.details h1 {
+  margin: 0;
+}
+
+.details h2 {
+  color: green;
+}
+
+.stars {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #f6ad55;
+}
+
+.details p {
+  line-height: 1.6;
+}
+
+.add-to-cart-btn,
+.back-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.add-to-cart-btn {
+  background-color: green;
+}
+
+.back-btn {
+  background-color: #14613c;
+  margin-left: 10px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .info {
+    flex-direction: column;
+    align-items: center; /* center items horizontally */
+    gap: 20px;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 400px;
+    height: 350px;
+    margin-top: 0;
+  }
+.name{
+    text-align: left !important;
+}
+  .details {
+    max-width: 100%;
+    text-align: justify; /* optional: center text for smaller screens */
+  }
+
+  .add-to-cart-btn,
+  .back-btn {
+    width: 80%; /* more visible width */
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-to-cart-btn,
+  .back-btn {
+    width: 100%; /* full width on mobile */
+  }
+
+  .stars {
+    font-size: 18px;
+  }
+}
+/* Button style */
+.test-btn {
+  background: #2f855a !important;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover animation */
+.test-btn:hover {
+  background: #276749 !important;
+  transform: translateX(4px); /* Slight slide effect */
+  color:  white !important;
+}
+
+/* Optional ripple effect on click */
+.test-btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s, transform 0.4s;
+  transform: scale(0);
+}
+
+.test-btn:active::after {
+  opacity: 1;
+  transform: scale(2);
+  transition: transform 0.3s, opacity 0.5s;
+}

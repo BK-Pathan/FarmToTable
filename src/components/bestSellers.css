@@ -171,6 +171,7 @@
 }
 
 .see-all-btn {
+  margin-top: 10px;
   background: transparent;
   border: 1px solid #2f855a;
   color: #2f855a;

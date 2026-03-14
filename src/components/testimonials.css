@@ -76,7 +76,7 @@
 
 /* Button style */
 .test-btn {
-  background: #2f855a;
+  background: #2f855a !important;
   color: #fff;
   padding: 10px 22px;
   border-radius: 8px;
@@ -90,8 +90,9 @@
 
 /* Hover animation */
 .test-btn:hover {
-  background: #276749;
+  background: #276749 !important;
   transform: translateX(4px); /* Slight slide effect */
+  color:  white !important;
 }
 
 /* Optional ripple effect on click */

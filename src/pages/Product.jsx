@@ -1,15 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "./product.css";
 import CategorySidebar from "../pages/CategorySidebar.jsx";
 import { products } from "../pages/products.js";
 
 import { db } from "../pages/fire.js";
-import { collection, addDoc, query, orderBy, serverTimestamp, onSnapshot } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  serverTimestamp,
+  onSnapshot
+} from "firebase/firestore";
 
 export default function Product({ addToCart }) {
-  const { category } = useParams();
 
+  // ✅ get category from URL
+  const params = useParams();
+  const category = params.category || null;
+
+  // ===== States =====
   const [feedbacks, setFeedbacks] = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -17,106 +28,188 @@ export default function Product({ addToCart }) {
   const [rating, setRating] = useState(5);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
-  const [messageType, setMessageType] = useState(""); // success | error
+  const [messageType, setMessageType] = useState("");
 
-  // 🔹 REAL-TIME FEEDBACKS
+  // ===== Filter Products =====
+  const filteredProducts = category
+    ? products.filter(product => product.slug === category)
+    : products;
+
+  // ===== Category Title =====
+  const formattedCategory = category
+    ? category
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, letter => letter.toUpperCase())
+    : "Our Products";
+
+  // ===== Firebase Feedback Listener =====
   useEffect(() => {
-    const q = query(collection(db, "feedbacks"), orderBy("timestamp", "desc"));
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      setFeedbacks(snapshot.docs.map(d => ({ id: d.id, ...d.data() })));
+
+    const q = query(
+      collection(db, "feedbacks"),
+      orderBy("timestamp", "desc")
+    );
+
+    const unsubscribe = onSnapshot(q, snapshot => {
+
+      const feedbackList = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+
+      setFeedbacks(feedbackList);
+
     });
 
-    return () => unsubscribe(); // Cleanup on unmount
+    return () => unsubscribe();
+
   }, []);
 
-  // 🔹 FEEDBACK SUBMIT
+  // ===== Feedback Submit =====
   const handleSubmit = async () => {
+
     if (!name.trim() || !email.trim() || !feedbackText.trim()) {
-      setMessage("Please fill all fields.");
+
+      setMessage("Please fill all fields");
       setMessageType("error");
       return;
+
     }
 
-    setLoading(true);
-    setMessage("");
-
     try {
+
+      setLoading(true);
+
       await addDoc(collection(db, "feedbacks"), {
-        name: name.trim(),
-        email: email.trim(),
-        feedback: feedbackText.trim(),
-        rating: Number(rating),
+
+        name,
+        email,
+        feedback: feedbackText,
+        rating,
         timestamp: serverTimestamp()
+
       });
 
-      // Clear form after submit
       setName("");
       setEmail("");
       setFeedbackText("");
       setRating(5);
 
-      setMessage("Feedback submitted successfully ✅");
+      setMessage("Feedback submitted successfully");
       setMessageType("success");
-    } catch (err) {
-      console.error("Submit error:", err);
-      setMessage("Something went wrong. Please try again ❌");
+
+    }
+    catch (error) {
+
+      setMessage("Error submitting feedback");
       setMessageType("error");
-    } finally {
+
+    }
+    finally {
+
       setLoading(false);
+
       setTimeout(() => {
+
         setMessage("");
         setMessageType("");
+
       }, 3000);
+
     }
+
   };
 
-  // 🔹 CATEGORY FILTER
-  const normalize = str =>
-    str?.toLowerCase().replace(/\s+/g, " ").replace(/&/g, "and").trim();
-
-  const filteredProducts = category
-    ? products.filter(p => p.slug === category)
-    : products;
-
-  const formattedCategory = category
-    ? category.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())
-    : "Our Products";
-
   return (
+
     <div className="product-page">
-      <h1 className="product-title">{formattedCategory}</h1>
+
+      {/* Title */}
+      <h1 className="product-title">
+        {formattedCategory}
+      </h1>
 
       <div className="product-layout">
+
+        {/* Sidebar */}
         <CategorySidebar />
 
+        {/* Products */}
         <div className="product-grid">
+
           {filteredProducts.length > 0 ? (
+
             filteredProducts.map(item => (
-              <div className="product" key={item.id}>
-                <img src={item.image} alt={item.name} />
-                <h2>{item.name}</h2>
-                {item.qty && <p className="product-qty">Quantity: <strong>{item.qty}</strong></p>}
-                <p className="price">PKR {item.price}</p>
-                <p className="description">{item.description}</p>
+
+              <div
+                className="product"
+                key={item.id}
+              >
+
+                <img
+                  src={item.image}
+                  alt={item.name}
+                />
+
+                <h2>
+                  {item.name}
+                </h2>
+
+                {item.qty && (
+                  <p className="product-qty">
+                    Quantity:
+                    <strong> {item.qty}</strong>
+                  </p>
+                )}
+
+                <p className="description">
+                  {item.S_D}
+                </p>
+
+                 <p className="price">
+                  PKR {item.price}
+                </p>
+
                 <div className="stars">
+
                   {"★".repeat(item.stars)}
                   {"☆".repeat(5 - item.stars)}
+
                 </div>
-                <button
-                  onClick={() =>
-                    addToCart({ id: item.id, name: item.name, price: item.price, quantity: 1 })
-                  }
-                >
-                  Add to Cart
-                </button>
+
+                {/* Buttons */}
+<div className="product-buttons">
+
+  <button onClick={() => addToCart(item)}>
+    Add to Cart
+  </button>
+
+<Link
+  to={`/product/${item.id}`}
+  state={{ from: window.location.pathname }} // passes current category/page
+>
+  <button>View Details</button>
+</Link>
+
+</div>
               </div>
+
             ))
+
           ) : (
-            <p>No products found in this category.</p>
+
+            <h2>
+              No products found
+            </h2>
+
           )}
+
         </div>
+
       </div>
 
     </div>
+
   );
+
 }

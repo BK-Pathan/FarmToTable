@@ -13,6 +13,7 @@ import FAQs from "./pages/FAQs";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import ScrollToTop from "../src/components/ScrollTop"; // ✅ ADD THIS
 import Feedback from "./pages/Feedback";
+import ProductDetail from "./pages/Details.jsx";
 
 import "./App.css";
 
@@ -114,7 +115,18 @@ function App() {
   {/* Products */}
   <Route path="/product" element={<Product addToCart={addToCart} />} />
   <Route path="/products" element={<Product addToCart={addToCart} />} />
-  <Route path="/product/:category" element={<Product addToCart={addToCart} />} />
+  <Route path="/products" element={<Product addToCart={addToCart} />} />
+
+  <Route
+    path="/products/category/:category"
+    element={<Product addToCart={addToCart} />}
+  />
+
+  {/* Product Detail */}
+  <Route
+    path="/product/:id"
+    element={<ProductDetail addToCart={addToCart} />}
+  />
 
   {/* Feedback Page ✅ */}
   <Route path="/feedback" element={<Feedback />} />

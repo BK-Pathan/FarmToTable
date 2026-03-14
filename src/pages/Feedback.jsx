@@ -115,29 +115,32 @@ export default function Feedback() {
       </div>
 
       {/* Feedback messages and list outside the card */}
-      <div className="feedback-outside">
-        {feedbacks.length > 0 && (
-          <h2 className="feedback-heading">See what our customers say</h2>
-        )}
-        {message && <div className={`msg ${messageType}`}>{message}</div>}
+<div className="feedback-outside">
+  {/* Show heading only if there is at least one feedback */}
+  {feedbacks.length > 0 && (
+    <h2 className="feedback-heading">See what our customers say</h2>
+  )}
 
-        <div className="feedback-list">
-          {feedbacks.map(f => (
-            <div key={f.id} className="feedback-item">
-              <strong>
-                {f.name}{" "}
-                {f.email && (
-                  <span className="feedback-email">
-                    ({maskEmail(f.email)})
-                  </span>
-                )}
-              </strong>
-              <div>{"★".repeat(f.rating) + "☆".repeat(5 - f.rating)}</div>
-              <p>{f.feedback}</p>
-            </div>
-          ))}
+  {message && <div className={`msg ${messageType}`}>{message}</div>}
+
+  <div className="feedback-list">
+    {feedbacks
+      .filter(f => f.feedback && f.name) // ✅ ignore empty docs
+      .map(f => (
+        <div key={f.id} className="feedback-item">
+          <strong>
+            {f.name}{" "}
+            {f.email && (
+              <span className="feedback-email">({maskEmail(f.email)})</span>
+            )}
+          </strong>
+          <div>{"★".repeat(f.rating) + "☆".repeat(5 - f.rating)}</div>
+          <p>{f.feedback}</p>
         </div>
-      </div>
+      ))}
+  </div>
+</div>
+
 
     </div>
   );

@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./footer.css";
 import { products } from "../pages/products"; // ✅ IMPORTANT
-import PrivacyPolicy from "../pages/PrivacyPolicy";
-import FAQs from "../pages/FAQs";
-import TermsAndConditions from "../pages/TermsAndConditions";
 
 export default function Footer() {
   const [isMobile, setIsMobile] = useState(false);
@@ -25,9 +22,11 @@ export default function Footer() {
     }));
   };
 
-  // ✅ UNIQUE categories from products (same as Navbar / WhatWeOffer)
+  // ✅ Unique categories from products (same as Navbar)
   const categories = [
-    ...new Map(products.map(p => [p.slug, p])).values()
+    ...new Map(
+      products.map(p => [p.category, { slug: p.slug, category: p.category }])
+    ).values()
   ];
 
   return (
@@ -47,12 +46,15 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ✅ What We Offer (UPDATED) */}
+        {/* ✅ What We Offer */}
         <div className="footer-section">
           <h4 onClick={() => toggleSection("offer")}>What We Offer</h4>
           <div className={`footer-content ${isMobile && openSections.offer ? "expanded" : ""}`}>
             {categories.map(cat => (
-              <Link key={cat.slug} to={`/product/${cat.slug}`}>
+              <Link
+                key={cat.slug}
+                to={`/products/category/${cat.slug}`}  // ✅ Correct path
+              >
                 {cat.category}
               </Link>
             ))}

@@ -1,0 +1,84 @@
+.carousel-section {
+  width: 100%;
+  max-width: 1024px; /* slightly wider than before */
+  margin: 40px auto 0; /* 40px top margin, auto sides, 0 bottom */
+}
+
+.carousel-title {
+  text-align: center;
+  font-size: 26px; /* slightly larger */
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.slider {
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  overflow: hidden;
+  position: relative;
+  height: 140px; /* slightly taller */
+  border-radius: 10px;
+}
+
+/* Scroll animation */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.slide-track {
+  display: flex;
+  width: calc(250px * 14); /* adjust according to items count */
+  animation: scroll 30s linear infinite;
+}
+
+.slide {
+  flex: 0 0 250px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+@media (max-width: 768px) {
+  .slider {
+    height: 100px;
+    padding: 0 16px; /* horizontal padding on both sides */
+  }
+  .slide {
+    flex: 0 0 150px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    height: 80px;
+    padding: 0 12px; /* smaller horizontal padding for very small screens */
+  }
+  .slide {
+    flex: 0 0 120px;
+    height: 80px;
+  }
+}
+
+/* Make sure the slide-track respects the padding */
+.slide-track {
+  display: flex;
+  animation: scroll 10s linear infinite;
+  gap: 8px; /* optional: small spacing between slides */
+  /* width will be auto since slides have fixed width */
+}
+
+}

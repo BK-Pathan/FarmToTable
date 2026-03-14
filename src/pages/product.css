@@ -49,7 +49,7 @@
   max-width: 300px;
   display: flex;
   flex-direction: column;
-  height: 450px !important;
+  height: 410px !important;
   transition: transform 0.2s;
 }
 
@@ -101,6 +101,9 @@
   }
   .product h2{
     margin-top: 10px !important;
+  }
+  .product{
+    height:auto !important;
   }
 }
 
@@ -199,22 +202,158 @@
   font-size: 18px;
 }
 
-button {
-  margin-top: 10px;
-  padding: 12px 20px;
+.product-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* dono buttons equal width */
+.product-buttons button {
+  flex: 1;
+  width: 100%;
   background: #134e18;
   color: #fff;
-
+  padding: 12px;
   border: none;
   border-radius: 6px;
+  font-weight: 600;
   cursor: pointer;
 }
 
-button:hover {
-  background: green;
+/* mobile: upar neeche */
+@media (max-width: 768px) {
+  .product-buttons {
+    flex-direction: column;
+  }
 }
+
 .product-qty {
   font-size: 14px;
   color: #666;
   margin: 4px 0 6px;
+}
+/* ===== Modal Overlay ===== */
+/* ===== Modal Overlay ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* center vertically */
+  overflow-y: auto;
+  padding: 20px; /* small padding around modal */
+}
+
+/* ===== Modal Content ===== */
+.modal-content.full-page {
+  background-color: #fff;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+
+  max-height: 90vh;     /* stay inside screen */
+  overflow-y: auto;     /* enable scroll if content too tall */
+
+  /* Scrollbar hide */
+  scrollbar-width: none !important;        /* Firefox */
+  -ms-overflow-style: none;                /* IE & Edge */
+}
+
+.modal-content.full-page::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari */
+}
+
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 28px;
+  border: none;
+  background:red;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+
+/* ===== Modal Image ===== */
+.modal-image {
+  width: 100%;               
+  height: 400px;            
+  aspect-ratio: 1 / 1;      /* ensures a perfect square */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+/* ===== Name & Price ===== */
+.modal-name {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.modal-price {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* ===== Stars ===== */
+.modal-stars {
+  color: gold;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* ===== Scrollable Description ===== */
+.modal-description-wrapper {
+  max-height: 250px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.modal-description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* ===== Add to Cart Button ===== */
+.modal-addcart {
+  width: 100%;
+  padding: 15px;
+  background: #134e18;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-addcart:hover {
+  background-color: #3730a3;
+}
+
+.text{
+  font-weight: 900;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
