@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { products } from "./products";
 import { db } from "./fire";
-import "../pages/Feedback.css";
+import "../pages/feedback.css";
 import "../pages/detail.css";
 import { Link } from "react-router-dom";
 import { collection, query, where, orderBy, onSnapshot } from "firebase/firestore";
