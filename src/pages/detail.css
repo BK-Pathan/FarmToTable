@@ -227,7 +227,10 @@
 }
 
 .related-product-card {
+  box-sizing: border-box;
+  flex: 0 0 auto; /* prevent stretching/shrinking */
   min-width: 200px;
+  max-width: 200px; /* limit width on larger screens */
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 8px;
@@ -235,7 +238,6 @@
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.2s;
-  flex-shrink: 0; /* prevent shrinking */
 }
 
 .related-product-card:hover {
@@ -275,11 +277,17 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .related-product-card { min-width: 150px; }
+  .related-product-card {
+    min-width: 150px;
+    max-width: 150px; /* fix width */
+  }
 }
 
 @media (max-width: 480px) {
-  .related-product-card { min-width: 120px; }
+  .related-product-card {
+    min-width: 120px;
+    max-width: 120px; /* fix width */
+  }
   .arrow { padding: 6px 10px; }
 }
 .related-products-wrapper {
@@ -287,8 +295,9 @@
 }
 
 /* Default: hide on desktop/laptop */
+/* Default: hide carousel buttons on desktop and tablet */
 .carousel-btn {
-  display: none; /* hidden by default on large screens */
+  display: none; /* hidden by default */
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -310,12 +319,29 @@
   transform: translateY(-50%) scale(1.05);
 }
 
+/* Desktop position */
 .carousel-btn.left { left: -35px; }
 .carousel-btn.right { right: -35px; }
 
-/* Show buttons only on mobile/tablet */
-@media (max-width: 1024px) {
+/* Show buttons ONLY on mobile */
+@media (max-width: 767px) {
   .carousel-btn {
     display: flex;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .carousel-btn {
+    width: 25px;
+    height: 40px;
+  }
+
+  .carousel-btn.left {
+    left: -25px;
+  }
+
+  .carousel-btn.right {
+    right: -25px;
   }
 }
