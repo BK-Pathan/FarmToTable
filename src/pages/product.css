@@ -40,6 +40,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   justify-items: center;
+  align-items: start;   /* ⭐ FIX */
 }
 
 /* =========================
@@ -52,11 +53,12 @@
   border-radius: 12px;
   padding: 10px;
   width: 100%;
-  max-width:310px;
+  max-width: 310px;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 50px !important;
+  justify-content: flex-start;   /* ✅ fixed */
+
   transition: 0.2s;
 }
 
