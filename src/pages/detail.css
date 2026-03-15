@@ -1,42 +1,50 @@
+/* ===============================
+   DETAIL PAGE LAYOUT
+   =============================== */
 .page {
   padding: 20px 60px;
   margin-top: 120px;
   font-family: Arial, sans-serif;
   width: 100%;
   box-sizing: border-box;
+
 }
 
-.back-button {
-  margin-bottom: 20px;
-  padding: 8px 15px;
-  cursor: pointer;
-}
 
+/* INFO SECTION (IMAGE + DETAILS) */
 .info {
   display: flex;
-  gap: 50px;
-  align-items: flex-start;
+  gap: 40px;
+  align-items: stretch; /* stretch details to match image height */
   width: 100%;
-  flex-direction: row-reverse; /* IMAGE RIGHT, TEXT LEFT */
+  flex-direction: row-reverse;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* IMAGE */
 .image {
-  margin-top: 40px;
-  width: 500px;
-  height: 700px;
+  width: 45%;
+  max-width: 500px;
+  height: auto;
   object-fit: cover;
   border-radius: 10px;
-  flex-shrink: 0; /* prevent shrinking */
+  flex-shrink: 0;
 }
 
+/* DETAILS */
 .details {
   flex: 1;
   min-width: 250px;
+  max-width: 55%;
   text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* top text + bottom buttons stretched */
 }
 
 .details h1 {
-  margin: 0;
+  margin: 0 0 10px 0;
 }
 
 .details h2 {
@@ -64,14 +72,22 @@
   line-height: 1.6;
 }
 
+.button-wrapper {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  gap: 15px;               /* space between buttons */
+  margin-top: 20px;
+}
+
 .add-to-cart-btn,
 .back-btn {
-  margin-top: 20px;
   padding: 12px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   color: white;
+  min-width: 120px;        /* optional: prevent very small buttons */
+  transition: all 0.3s ease;
 }
 
 .add-to-cart-btn {
@@ -80,42 +96,55 @@
 
 .back-btn {
   background-color: #14613c;
-  margin-left: 10px;
 }
 
-/* Responsive tweaks */
+/* ===============================
+   RESPONSIVE STYLES
+   =============================== */
 @media (max-width: 1024px) {
   .info {
-    flex-direction: column; /* stack vertically on smaller screens */
+    flex-direction: column; /* stack vertically */
     align-items: center;
     gap: 20px;
   }
 
   .image {
-    width: 100%;
+    width: 80%;
     max-width: 400px;
-    height: 350px;
     margin-top: 0;
   }
 
   .details {
-    max-width: 100%;
-    text-align: justify;
+    max-width: 90%;
+  }
+  .button-wrapper {
+    flex-direction: column; /* stack vertically */
+    gap: 10px;
+    align-items: center;
   }
 
-  /* CENTER BUTTONS */
   .add-to-cart-btn,
   .back-btn {
-    width: 80%;
-    margin: 10px auto;
+    width: 60%; /* medium width on tablet */
     display: block;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 480px) {
-  .add-to-cart-btn,
+  .image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .details {
+    width: 100%;
+  }
+
+   .add-to-cart-btn,
   .back-btn {
     width: 100%; /* full width on mobile */
+    margin: 0;
   }
 
   .stars {
@@ -123,7 +152,9 @@
   }
 }
 
-/* Button style */
+/* ===============================
+   BUTTON STYLE (.test-btn)
+   =============================== */
 .test-btn {
   background: #2f855a !important;
   color: #fff;
@@ -140,7 +171,7 @@
 /* Hover animation */
 .test-btn:hover {
   background: #276749 !important;
-  transform: translateX(4px); /* Slight slide effect */
+  transform: translateX(4px);
   color: white !important;
 }
 
@@ -164,4 +195,127 @@
   opacity: 1;
   transform: scale(2);
   transition: transform 0.3s, opacity 0.5s;
+}
+/* relatd products css */
+.related-products-section {
+  width: 100%;
+  max-width: 1024px;
+  margin: 40px auto 0;
+  margin-top: 80px !important;
+}
+
+.carousel-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.related-products-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center container itself */
+}
+
+.related-products-container {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  justify-content: center; /* center items if fewer than container width */
+}
+
+.related-product-card {
+  min-width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 8px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  flex-shrink: 0; /* prevent shrinking */
+}
+
+.related-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.related-product-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.related-product-card h3 {
+  font-size: 14px;
+  margin: 4px 0;
+  overflow: hidden;
+  height: 30px;
+}
+
+.related-product-card p {
+  font-weight: bold;
+  margin: 2px 0;
+}
+
+
+/* Hide scrollbar */
+.related-products-container::-webkit-scrollbar {
+  display: none;
+}
+
+.related-products-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .related-product-card { min-width: 150px; }
+}
+
+@media (max-width: 480px) {
+  .related-product-card { min-width: 120px; }
+  .arrow { padding: 6px 10px; }
+}
+.related-products-wrapper {
+  position: relative;
+}
+
+/* Default: hide on desktop/laptop */
+.carousel-btn {
+  display: none; /* hidden by default on large screens */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(125, 191, 169, 0.1);
+  color: #333;
+  border: none;
+  width: 30px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.carousel-btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-btn.left { left: -35px; }
+.carousel-btn.right { right: -35px; }
+
+/* Show buttons only on mobile/tablet */
+@media (max-width: 1024px) {
+  .carousel-btn {
+    display: flex;
+  }
 }

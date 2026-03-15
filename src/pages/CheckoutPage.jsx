@@ -159,7 +159,7 @@ Total: Rs ${total}`;
                 ) : (
                   cartItems.map((item) => (
                     <li key={item.id}>
-                      {item.name} x {item.quantity}
+                      {item.name} x {item.quantity}:
                       <span>Rs {item.price * item.quantity}</span>
                     </li>
                   ))

@@ -122,93 +122,82 @@ export default function Product({ addToCart }) {
 
   return (
 
-    <div className="product-page">
+  <div className="product-page">
 
-      {/* Title */}
-      <h1 className="product-title">
-        {formattedCategory}
-      </h1>
+  {/* Title */}
+  <h1 className="product-title">
+    {formattedCategory}
+  </h1>
 
-      <div className="product-layout">
+  <div className="product-layout">
 
-        {/* Sidebar */}
-        <CategorySidebar />
+    {/* Sidebar */}
+    <CategorySidebar />
 
-        {/* Products */}
-        <div className="product-grid">
+    {/* Products */}
+    <div className="product-grid">
 
-          {filteredProducts.length > 0 ? (
+      {filteredProducts.length > 0 ? (
 
-            filteredProducts.map(item => (
+        filteredProducts.map(item => (
 
-              <div
-                className="product"
-                key={item.id}
-              >
+          <div
+            className="product"
+            key={item.id}
+          >
 
-                <img
-                  src={item.image}
-                  alt={item.name}
-                />
+            {/* Wrap entire card content in Link */}
+            <Link
+              to={`/product/${item.id}`}
+              state={{ from: window.location.pathname }}
+              className="product-link"
+              style={{ textDecoration: "none", color: "inherit", display: "block" }}
+            >
+              <img
+                src={item.image}
+                alt={item.name}
+              />
 
-                <h2>
-                  {item.name}
-                </h2>
+              <h2>{item.name}</h2>
 
-                {item.qty && (
-                  <p className="product-qty">
-                    Quantity:
-                    <strong> {item.qty}</strong>
-                  </p>
-                )}
+{/* <p className="Qty">
+                PKR {item.qty}
+              </p> */}
+              <p className="price">
+                PKR {item.price}
+              </p>
 
-                <p className="description">
-                  {item.S_D}
-                </p>
+              {/* Optionally, stars */}
+              {/* <div className="stars">
+                {"★".repeat(item.stars)}
+                {"☆".repeat(5 - item.stars)}
+              </div> */}
+            </Link>
 
-                 <p className="price">
-                  PKR {item.price}
-                </p>
+            {/* Add to Cart button stays outside Link */}
+            <div className="product-buttons">
+              <button onClick={() => addToCart(item)}>
+                Add to Cart
+              </button>
+            </div>
 
-                <div className="stars">
+          </div>
 
-                  {"★".repeat(item.stars)}
-                  {"☆".repeat(5 - item.stars)}
+        ))
 
-                </div>
+      ) : (
 
-                {/* Buttons */}
-<div className="product-buttons">
+        <h2>
+          No products found
+        </h2>
 
-  <button onClick={() => addToCart(item)}>
-    Add to Cart
-  </button>
-
-<Link
-  to={`/product/${item.id}`}
-  state={{ from: window.location.pathname }} // passes current category/page
->
-  <button>View Details</button>
-</Link>
-
-</div>
-              </div>
-
-            ))
-
-          ) : (
-
-            <h2>
-              No products found
-            </h2>
-
-          )}
-
-        </div>
-
-      </div>
+      )}
 
     </div>
+
+  </div>
+
+</div>
 
   );
 
