@@ -137,7 +137,7 @@ keyFeatures: [
 
   {
     id: 7,
-    name: " Plain-Honey ",
+    name: " Plain-Honey (1KG)",
     price: 2000,
     qty: "1KG",
     description: "Our Plain Honey is a 100% pure, multi-floral nectar gathered from the heart of nature’s most vibrant landscapes. Each batch is a reflection of the season, capturing the sweetness of diverse blooms to create a well-rounded, floral flavor profile. We use a cold-extraction process to ensure that the natural antioxidants and phytonutrients remain intact. This honey acts as a natural humectant and an instant energy booster, making it a healthier alternative to refined sugar. Regular consumption can aid in digestion and soothe a sore throat.",
@@ -159,7 +159,7 @@ keyFeatures: [
 
   {
     id: 8,
-    name: "Plain-Honey",
+    name: "Plain-Honey (500g)",
     price: 1200,
     qty: "500g",
     description: "Our Plain Honey is a 100% pure, multi-floral nectar gathered from the heart of nature’s most vibrant landscapes. Each batch is a reflection of the season, capturing the sweetness of diverse blooms to create a well-rounded, floral flavor profile. We use a cold-extraction process to ensure that the natural antioxidants and phytonutrients remain intact. This honey acts as a natural humectant and an instant energy booster, making it a healthier alternative to refined sugar. Regular consumption can aid in digestion and soothe a sore throat.",
