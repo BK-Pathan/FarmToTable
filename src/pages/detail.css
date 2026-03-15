@@ -222,8 +222,8 @@
   gap: 12px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 10px 0;
-  justify-content: center; /* center items if fewer than container width */
+  padding: 10px 6px; /* reduce horizontal padding */
+  justify-content: flex-start; /* left-align, safer for scroll */
 }
 
 .related-product-card {
